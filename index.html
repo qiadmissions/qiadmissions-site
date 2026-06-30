@@ -1,8 +1,7 @@
 <!doctype html>
-<!-- PROVENANCE: Quintessence site v6 — rebuilt to the QUINTESSENCE-VISION standard via adversarial critique + creative-direction
-     (deliverables/site-copy-proposal.md). Prestige by restraint: philosophy as the spine, said once, with air. Guardrails:
-     no pricing · no proprietary/©/™ · no unverified stats · Five Elements as journey · finalizing-not-finishing ·
-     authorship-never-ghostwriting · own Columbia · no founder photo · QI present · Mandarin support. noindex. self-loaded fonts. -->
+<!-- Quintessence landing v7 — reworked per site-rework-brief.md: clear plain voice (not literary/AI), QI prominent,
+     Hanken Grotesk sans, signup pipeline (info-meeting primary + consultation + AoE), schools list, founder Philosophy/Drama,
+     mobile fixes, red-herring removed. Guardrails: no pricing/proprietary/unverified-stats. noindex. -->
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -12,331 +11,313 @@
 <title>Quintessence — Private College Counseling &amp; Application Advisory</title>
 <meta property="og:type" content="website">
 <meta property="og:title" content="Quintessence — the truest expression of who your child is">
-<meta property="og:description" content="A private college advisory. We help your child discover who they truly are — and turn it into an application unmistakably theirs. Free seminar Sunday, July 12, 8 PM EDT.">
+<meta property="og:description" content="A private college advisory. We help your child figure out who they really are — and turn it into an application that's unmistakably theirs. Free info session, Sunday July 12, 8 PM EDT.">
 <meta property="og:image" content="https://qiadmissions.com/og.png">
 <meta property="og:url" content="https://qiadmissions.com/">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://qiadmissions.com/og.png">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%2315171c'/%3E%3Ctext x='50' y='68' font-family='Georgia,serif' font-size='42' letter-spacing='1' fill='%23f6f4ef' text-anchor='middle'%3EQI%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-  :root{ color-scheme:light; --bg:#f6f4ef; --paper:#fbfaf7; --ink:#15171c; --soft:#5d616b; --line:#e2ddd3;
-    --accent:#6d1f2c; --navy:#0e2a3a; --gold:#a98a55;
-    --serif:'Cormorant Garamond',Georgia,'Times New Roman',serif; --sans:'Inter',system-ui,-apple-system,'Helvetica Neue',Arial,sans-serif; }
+  :root{ color-scheme:light; --bg:#f6f4ef; --paper:#fbfaf7; --ink:#191b1f; --soft:#5a5d63; --line:#e2ddd3;
+    --accent:#6d1f2c; --navy:#0e2a3a; --gold:#9c8049;
+    --serif:'Cormorant Garamond',Georgia,'Times New Roman',serif; --sans:'Hanken Grotesk',system-ui,-apple-system,Arial,sans-serif; }
   *{ box-sizing:border-box; margin:0; padding:0; }
-  html{ scroll-behavior:smooth; } body{ background:var(--bg); color:var(--ink); font-family:var(--sans); line-height:1.7; }
+  html{ scroll-behavior:smooth; } body{ background:var(--bg); color:var(--ink); font-family:var(--sans); line-height:1.65; }
   .serif{ font-family:var(--serif); font-weight:600; }
-  .wrap{ max-width:1040px; margin:0 auto; padding:0 30px; }
-  .col{ max-width:62ch; }
-  .eyebrow{ font-size:11.5px; letter-spacing:.34em; text-transform:uppercase; color:var(--gold); }
-  section{ padding:122px 0; border-bottom:1px solid var(--line); }
-  .h2{ font-family:var(--serif); font-weight:600; font-size:clamp(30px,4.4vw,46px); line-height:1.12; margin-top:26px; }
-  p.body{ font-size:18px; color:var(--ink); line-height:1.75; margin-top:22px; }
+  .wrap{ max-width:1040px; margin:0 auto; padding:0 28px; }
+  .col{ max-width:60ch; }
+  .eyebrow{ font-size:11.5px; letter-spacing:.32em; text-transform:uppercase; color:var(--gold); }
+  section{ padding:104px 0; border-bottom:1px solid var(--line); }
+  .h2{ font-family:var(--serif); font-weight:600; font-size:clamp(29px,4.2vw,44px); line-height:1.13; margin-top:24px; }
+  p.body{ font-size:18px; color:var(--ink); line-height:1.7; margin-top:20px; }
   p.body.soft{ color:var(--soft); }
-  .btn{ font-size:12.5px; letter-spacing:.18em; text-transform:uppercase; text-decoration:none; padding:16px 30px; display:inline-block; }
+  .btn{ font-size:12.5px; letter-spacing:.16em; text-transform:uppercase; text-decoration:none; padding:16px 28px; display:inline-block; }
   .btn-dark{ background:var(--ink); color:var(--paper); } .btn-dark:hover{ background:var(--accent); }
-  .tlink{ font-size:12.5px; letter-spacing:.14em; text-transform:uppercase; color:var(--ink); text-decoration:none; border-bottom:1px solid var(--line); padding-bottom:3px; }
+  .tlink{ font-size:12.5px; letter-spacing:.13em; text-transform:uppercase; color:var(--ink); text-decoration:none; border-bottom:1px solid var(--line); padding-bottom:3px; }
   .tlink:hover{ border-color:var(--accent); color:var(--accent); }
 
-  /* nav */
-  nav{ position:sticky; top:0; z-index:20; background:rgba(246,244,239,.92); -webkit-backdrop-filter:blur(10px); backdrop-filter:blur(10px); border-bottom:1px solid var(--line); }
-  nav .wrap{ display:flex; align-items:baseline; justify-content:space-between; height:68px; }
-  .mark{ font-family:var(--serif); font-weight:600; font-size:23px; letter-spacing:.02em; }
-  .mark span{ font-family:var(--sans); font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:var(--soft); margin-left:12px; }
-  .navlink{ font-size:12px; letter-spacing:.2em; text-transform:uppercase; color:var(--ink); text-decoration:none; }
+  nav{ position:sticky; top:0; z-index:20; background:rgba(246,244,239,.93); -webkit-backdrop-filter:blur(10px); backdrop-filter:blur(10px); border-bottom:1px solid var(--line); }
+  nav .wrap{ display:flex; align-items:center; justify-content:space-between; min-height:64px; gap:12px; flex-wrap:wrap; }
+  .navbrand{ display:flex; align-items:baseline; gap:10px; }
+  .navqi{ font-family:var(--serif); font-weight:600; font-size:20px; letter-spacing:.08em; color:var(--accent); }
+  .navmark{ font-family:var(--serif); font-weight:600; font-size:21px; letter-spacing:.02em; }
+  .navlinks{ display:flex; gap:22px; align-items:center; }
+  .navlink{ font-size:12px; letter-spacing:.16em; text-transform:uppercase; color:var(--ink); text-decoration:none; }
   .navlink:hover{ color:var(--accent); }
 
-  /* hero */
-  .hero{ text-align:center; padding:120px 0 110px; }
-  .brandhero{ font-family:var(--serif); font-weight:600; font-size:clamp(66px,13vw,150px); line-height:1; letter-spacing:.01em; }
-  .defn{ font-family:var(--serif); font-style:italic; font-size:clamp(17px,2.3vw,23px); color:var(--soft); margin-top:18px; }
+  /* hero — QI above Quintessence */
+  .hero{ text-align:center; padding:108px 0 96px; }
+  .qimark{ font-family:var(--serif); font-weight:600; font-size:clamp(72px,16vw,168px); line-height:.9; letter-spacing:.06em; color:var(--accent); }
+  .brandhero{ font-family:var(--serif); font-weight:600; font-size:clamp(40px,7vw,82px); line-height:1; letter-spacing:.02em; margin-top:6px; }
+  .defn{ font-family:var(--serif); font-style:italic; font-size:clamp(16px,2.2vw,22px); color:var(--soft); margin-top:16px; }
   .defn b{ font-style:normal; color:var(--ink); letter-spacing:.03em; }
-  .herosub{ font-size:19px; color:var(--ink); line-height:1.7; max-width:50ch; margin:34px auto 0; }
-  .brandline{ margin-top:30px; font-size:12.5px; letter-spacing:.28em; text-transform:uppercase; color:var(--soft); }
-  .brandline b{ color:var(--accent); }
-  .herocta{ margin-top:40px; display:flex; gap:26px; align-items:center; justify-content:center; flex-wrap:wrap; }
+  .herosub{ font-size:19px; color:var(--ink); line-height:1.65; max-width:48ch; margin:30px auto 0; }
+  .brandline{ margin-top:26px; font-size:12px; letter-spacing:.24em; text-transform:uppercase; color:var(--soft); }
+  .herocta{ margin-top:38px; display:flex; gap:24px; align-items:center; justify-content:center; flex-wrap:wrap; }
 
-  /* premise */
   .premise{ background:var(--paper); }
-  .premise p{ font-family:var(--serif); font-weight:500; font-size:clamp(21px,2.6vw,27px); line-height:1.5; color:var(--ink); margin-top:24px; }
+  .premise p{ font-family:var(--serif); font-weight:500; font-size:clamp(21px,2.5vw,27px); line-height:1.5; margin-top:22px; max-width:30ch; }
   .premise p em{ font-style:italic; color:var(--accent); }
+  .premise .col{ max-width:34ch; }
 
-  /* method */
-  .method .intro{ font-size:18px; color:var(--soft); line-height:1.75; max-width:60ch; margin-top:22px; }
-  .steps{ margin-top:60px; }
-  .step{ display:grid; grid-template-columns:160px 1fr; gap:34px; padding:30px 0; border-top:1px solid var(--line); align-items:baseline; }
+  .method .intro{ font-size:18px; color:var(--soft); line-height:1.7; max-width:58ch; margin-top:20px; }
+  .steps{ margin-top:52px; }
+  .step{ display:grid; grid-template-columns:150px 1fr; gap:30px; padding:28px 0; border-top:1px solid var(--line); align-items:baseline; }
   .step:last-of-type{ border-bottom:1px solid var(--line); }
   .step .dot{ display:inline-block; width:12px; height:12px; border-radius:50%; border:1px solid rgba(0,0,0,.14); margin-bottom:10px; }
-  .step .name{ font-family:var(--serif); font-weight:600; font-size:27px; line-height:1; }
+  .step .name{ font-family:var(--serif); font-weight:600; font-size:26px; line-height:1; }
   .step .ph{ font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:var(--soft); margin-top:7px; }
-  .step .txt{ font-size:17px; line-height:1.7; }
-  .step .txt em{ font-style:italic; color:var(--accent); }
-  .step .deliv{ display:block; margin-top:12px; font-family:var(--serif); font-weight:600; font-size:16px; color:var(--navy); }
-  .heartbeat{ font-family:var(--serif); font-weight:600; font-style:italic; font-size:21px; color:var(--accent); }
-  .method .coda{ font-size:17px; color:var(--soft); line-height:1.75; max-width:58ch; margin-top:44px; }
+  .step .txt{ font-size:17px; line-height:1.65; }
+  .step .deliv{ display:block; margin-top:11px; font-family:var(--serif); font-weight:600; font-size:16px; color:var(--navy); }
+  .heartbeat{ font-family:var(--serif); font-weight:600; font-style:italic; font-size:20px; color:var(--accent); }
+  .seehow{ margin-top:42px; }
 
-  /* family receives */
   .receives{ background:var(--paper); }
-  .artifacts{ margin-top:54px; display:grid; gap:34px; max-width:64ch; }
-  .artifact{ border-top:1px solid var(--line); padding-top:24px; }
-  .artifact h3{ font-family:var(--serif); font-weight:600; font-size:24px; }
-  .artifact p{ font-size:16.5px; color:var(--soft); line-height:1.7; margin-top:8px; }
-  .receives .close{ font-family:var(--serif); font-size:clamp(22px,2.6vw,28px); line-height:1.45; margin-top:54px; max-width:30ch; }
+  .glist{ margin-top:48px; display:grid; gap:30px; max-width:62ch; }
+  .gitem{ border-top:1px solid var(--line); padding-top:22px; }
+  .gitem h3{ font-family:var(--serif); font-weight:600; font-size:23px; }
+  .gitem p{ font-size:16.5px; color:var(--soft); line-height:1.65; margin-top:8px; }
+  .receives .close{ font-family:var(--serif); font-size:clamp(21px,2.5vw,27px); line-height:1.45; margin-top:50px; max-width:32ch; }
 
-  /* why */
-  .why .grid{ margin-top:56px; display:grid; grid-template-columns:1fr 1fr; gap:46px 56px; }
-  .conv h3{ font-family:var(--serif); font-weight:600; font-size:25px; }
-  .conv p{ font-size:16.5px; color:var(--soft); line-height:1.7; margin-top:10px; }
+  .why .grid{ margin-top:52px; display:grid; grid-template-columns:1fr 1fr; gap:44px 54px; }
+  .conv h3{ font-family:var(--serif); font-weight:600; font-size:24px; }
+  .conv p{ font-size:16.5px; color:var(--soft); line-height:1.65; margin-top:10px; }
 
-  /* buying — the exhale */
-  .buying{ text-align:center; padding:150px 0; }
-  .buying .statement{ font-family:var(--serif); font-weight:500; font-size:clamp(28px,4.6vw,50px); line-height:1.28; max-width:18ch; margin:0 auto; }
-  .buying .sub{ font-size:17px; color:var(--soft); margin-top:30px; }
+  /* schools */
+  .schools{ text-align:center; background:var(--paper); }
+  .schools .list{ font-family:var(--serif); font-size:clamp(20px,2.4vw,27px); line-height:1.8; color:var(--ink); max-width:42ch; margin:36px auto 0; }
+  .schools .list b{ color:var(--accent); }
+  .schools .note{ font-size:13px; color:var(--soft); margin-top:26px; }
 
-  /* seminar — the dark room */
+  .buying{ text-align:center; padding:128px 0; }
+  .buying .statement{ font-family:var(--serif); font-weight:500; font-size:clamp(27px,4.4vw,48px); line-height:1.28; max-width:19ch; margin:0 auto; }
+  .buying .sub{ font-size:17px; color:var(--soft); margin-top:28px; }
+
   .seminar{ background:var(--navy); color:#eef2f4; border-bottom:none; }
-  .seminar .eyebrow{ color:#9fc3d6; }
-  .seminar .h2{ color:#fff; }
-  .seminar .lede{ font-size:18px; color:#c4d2da; line-height:1.75; max-width:58ch; margin-top:22px; }
-  .seminar .learn{ margin-top:42px; display:grid; gap:0; max-width:60ch; }
-  .seminar .learn .it{ display:flex; gap:18px; font-size:16.5px; color:#e7eef2; line-height:1.5; padding:16px 0; border-top:1px solid rgba(255,255,255,.13); }
+  .seminar .eyebrow{ color:#9fc3d6; } .seminar .h2{ color:#fff; }
+  .seminar .lede{ font-size:18px; color:#c4d2da; line-height:1.7; max-width:56ch; margin-top:20px; }
+  .seminar .learn{ margin-top:36px; display:grid; gap:0; max-width:58ch; }
+  .seminar .learn .it{ display:flex; gap:16px; font-size:16px; color:#e7eef2; line-height:1.45; padding:15px 0; border-top:1px solid rgba(255,255,255,.13); }
   .seminar .learn .it b{ font-family:var(--serif); color:#9fc3d6; font-weight:500; }
-  .seminar .facts{ margin-top:46px; font-family:var(--serif); font-size:clamp(20px,2.6vw,26px); color:#fff; }
-  .seminar .partner{ margin-top:30px; font-size:14px; color:#bccfd9; line-height:1.7; max-width:54ch; } .seminar .partner b{ color:#fff; }
-  .seminar .aoe{ margin-top:18px; font-size:14px; color:#bccfd9; max-width:54ch; }
-  .seminar .row{ margin-top:40px; }
+  .seminar .facts{ margin-top:42px; font-family:var(--serif); font-size:clamp(19px,2.5vw,25px); color:#fff; }
+  .seminar .partner{ margin-top:26px; font-size:14px; color:#bccfd9; line-height:1.65; max-width:54ch; } .seminar .partner b{ color:#fff; }
+  .seminar .row{ margin-top:36px; }
   .seminar .btn-light{ background:#fff; color:var(--navy); }
 
-  /* path forward */
-  .path{ background:var(--paper); }
+  /* booking pipeline */
+  .book .opts{ margin-top:44px; display:grid; grid-template-columns:1fr 1fr 1fr; gap:20px; }
+  .opt{ border:1px solid var(--line); background:var(--paper); padding:26px 24px; display:flex; flex-direction:column; }
+  .opt.primary{ border-color:var(--navy); border-width:1.5px; }
+  .opt .tag{ font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:var(--gold); }
+  .opt h3{ font-family:var(--serif); font-weight:600; font-size:23px; margin-top:8px; }
+  .opt p{ font-size:15px; color:var(--soft); line-height:1.6; margin-top:8px; flex:1; }
+  .opt .pick{ margin-top:18px; font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:var(--accent); text-decoration:none; }
 
-  /* founder */
-  .founder .lead{ font-family:var(--serif); font-weight:600; font-size:clamp(26px,3.4vw,36px); line-height:1.2; margin-top:26px; max-width:20ch; }
-
-  /* rsvp */
-  .rsvp .lede{ font-size:18px; color:var(--soft); line-height:1.7; max-width:56ch; margin-top:18px; }
-  form{ display:grid; grid-template-columns:1fr 1fr; gap:20px; margin-top:46px; max-width:680px; }
+  .rsvp{ background:var(--paper); }
+  .rsvp .lede{ font-size:18px; color:var(--soft); line-height:1.65; max-width:54ch; margin-top:18px; }
+  form{ display:grid; grid-template-columns:1fr 1fr; gap:18px; margin-top:42px; max-width:680px; }
   .full{ grid-column:1/-1; }
-  label{ font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--soft); display:block; margin-bottom:8px; }
+  label{ font-size:11px; letter-spacing:.13em; text-transform:uppercase; color:var(--soft); display:block; margin-bottom:8px; }
   .hint{ font-size:11px; color:var(--soft); text-transform:none; letter-spacing:0; margin-top:5px; font-style:italic; }
-  input,select{ width:100%; font-size:15px; font-family:var(--sans); padding:14px 14px; background:#fff; border:1px solid var(--line); color:var(--ink); }
+  input,select{ width:100%; font-size:15px; font-family:var(--sans); padding:13px 14px; background:#fff; border:1px solid var(--line); color:var(--ink); }
   input:focus,select:focus{ outline:none; border-color:var(--navy); }
-  button{ font-size:12.5px; letter-spacing:.18em; text-transform:uppercase; background:var(--ink); color:var(--paper); border:none; padding:17px; cursor:pointer; font-family:var(--sans); }
+  button{ font-size:12.5px; letter-spacing:.16em; text-transform:uppercase; background:var(--ink); color:var(--paper); border:none; padding:16px; cursor:pointer; font-family:var(--sans); }
   button:hover{ background:var(--accent); }
 
-  /* footer */
-  footer{ padding:60px 0 74px; border-bottom:none; }
+  footer{ padding:54px 0 70px; border-bottom:none; }
   footer .wrap{ display:flex; justify-content:space-between; align-items:flex-end; gap:24px; flex-wrap:wrap; }
-  .fmark{ font-family:var(--serif); font-weight:600; font-size:26px; }
-  .fdesc{ font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:var(--soft); margin-top:8px; }
+  .fmark{ font-family:var(--serif); font-weight:600; font-size:25px; }
+  .fdesc{ font-size:12px; letter-spacing:.13em; text-transform:uppercase; color:var(--soft); margin-top:8px; }
   .fmeta{ font-size:13px; color:var(--soft); line-height:1.8; text-align:right; }
-  .qimono{ font-family:var(--serif); font-weight:600; letter-spacing:.1em; border:1px solid var(--line); padding:3px 8px; }
+  .qimono{ font-family:var(--serif); font-weight:600; letter-spacing:.1em; border:1px solid var(--line); padding:3px 9px; color:var(--accent); }
   .edit{ background:#fff6d6; color:#8a6d00; padding:0 4px; }
 
   @media(max-width:760px){
-    section{ padding:84px 0; } .buying{ padding:100px 0; }
-    .why .grid{ grid-template-columns:1fr; } .step{ grid-template-columns:1fr; gap:10px; }
-    form{ grid-template-columns:1fr; } .fmeta{ text-align:left; }
+    section{ padding:72px 0; } .buying{ padding:90px 0; }
+    nav .wrap{ min-height:58px; } .navlinks{ gap:16px; }
+    .hero{ padding:72px 0 64px; } .herosub{ font-size:17px; }
+    .why .grid{ grid-template-columns:1fr; gap:34px; } .step{ grid-template-columns:1fr; gap:10px; }
+    .book .opts{ grid-template-columns:1fr; } form{ grid-template-columns:1fr; } .fmeta{ text-align:left; }
   }
 </style>
 </head>
 <body>
 
 <nav><div class="wrap">
-  <div class="mark">Quintessence<span>qiadmissions.com</span></div>
-  <div style="display:flex;gap:28px;align-items:baseline">
+  <div class="navbrand"><span class="navqi">QI</span><span class="navmark">Quintessence</span></div>
+  <div class="navlinks">
     <a class="navlink" href="/method.html">The Method</a>
-    <a class="navlink" href="#rsvp">Begin</a>
+    <a class="navlink" href="#book">Begin</a>
   </div>
 </div></nav>
 
-<!-- 1 · HERO -->
+<!-- HERO -->
 <header class="hero"><div class="wrap">
   <div class="eyebrow">Private College Counseling &amp; Application Advisory</div>
+  <div class="qimark">QI</div>
   <div class="brandhero serif">Quintessence</div>
   <p class="defn"><b>quin·tes·sence</b> <i>(n.)</i> — the fifth and purest essence; the truest expression of what something is.</p>
-  <p class="herosub">We help your child discover who they truly are — and turn it into an application unmistakably theirs.
-     The most strategic story and the most authentic one are the same story.</p>
-  <div class="brandline"><b>QI</b> &nbsp;·&nbsp; qiadmissions.com</div>
+  <p class="herosub">We help your child figure out who they really are — and turn it into an application that is
+     unmistakably theirs. The strongest application is the most honest one.</p>
+  <div class="brandline">qiadmissions.com</div>
   <div class="herocta">
-    <a class="btn btn-dark" href="#rsvp">Begin a conversation</a>
-    <a class="tlink" href="#method">See how we work →</a>
+    <a class="btn btn-dark" href="#book">Join the free info session · July 12</a>
+    <a class="tlink" href="/method.html">See how we work →</a>
   </div>
 </div></header>
 
-<!-- 2 · THE PREMISE -->
+<!-- PREMISE -->
 <section class="premise"><div class="wrap col">
   <div class="eyebrow">The premise</div>
-  <p>Beyond earth, water, air, and fire, the ancients held a fifth element — the purest, the one the other four were reaching toward. They called it the <em>quintessence</em>.</p>
-  <p>Our work begins deeper than the application. Before a single word is written, we help your child discover who they actually are — then cultivate it, and communicate it.</p>
-  <p>We treat the essay as an art, not a machine: the ingredients of a young life, composed into something true. We don't play darts with a child's destiny.</p>
+  <p><em>Quintessence</em> means the fifth essence — the purest version of a thing, distilled from the rest.</p>
+  <p>That's the work: helping your child find what is most real and most theirs, and getting it onto the page.</p>
+  <p>Most applications are assembled. We start deeper — with who your child actually is — because the most honest
+     story is also the most convincing one. We never write it for them. We help them write it well.</p>
 </div></section>
 
-<!-- 3 · THE METHOD -->
+<!-- METHOD -->
 <section class="method" id="method"><div class="wrap">
-  <div class="eyebrow">The method — Five Elements</div>
-  <div class="h2 serif">Five stages, moved through in order.</div>
-  <p class="intro">From the most open and exploratory to the most precise and finished. We never ask for a draft before
-     the foundation is set — that is the whole difference between a strategy and a scramble. The same five stages guide
-     a single paragraph and the long arc of a high-school career.</p>
+  <div class="eyebrow">How we work — the Five Elements</div>
+  <div class="h2 serif">Five stages, taken in order.</div>
+  <p class="intro">From the most open to the most finished. We never ask for a draft before the foundation is set —
+     that is the difference between a strategy and a scramble. The same five stages guide a single essay and a
+     student's whole high-school arc.</p>
   <div class="steps">
     <div class="step">
       <div><span class="dot" style="background:#efe9da"></span><div class="name" style="color:#9a8a66">Space</div><div class="ph">Framing</div></div>
-      <div class="txt">We define the ground first — what colleges are truly looking for, and what your child brings to the table.<span class="deliv">Student Profile · Archetype · the overall approach</span></div></div>
+      <div class="txt">We start by getting clear on two things: what colleges are really looking for, and everything your child has to work with. This is also where the school list takes shape.<span class="deliv">Student Profile · the right school list · the overall plan</span></div></div>
     <div class="step">
       <div><span class="dot" style="background:#b3322a"></span><div class="name" style="color:#b3322a">Fire</div><div class="ph">Focusing</div></div>
-      <div class="txt">We find the spark — the essence, the seed idea at the center of the story — and turn it into a plan for every essay.<span class="deliv">A blueprint for each essay</span></div></div>
+      <div class="txt">We find the core — the one true through-line that ties a whole life into a single, clear story — and turn it into a plan for every essay.<span class="deliv">An archetype · a blueprint for each essay</span></div></div>
     <div class="step">
       <div><span class="dot" style="background:#2f6fb0"></span><div class="name" style="color:#2f6fb0">Water</div><div class="ph">Flowing</div></div>
-      <div class="txt">Your child writes — every word, in their own voice. <span class="heartbeat">Not AI. Not us. Them.</span> This is not a gap in our service. It is the point.<span class="deliv">Initial drafts</span></div></div>
+      <div class="txt">Your child writes — every word, in their own voice. <span class="heartbeat">Not AI. Not us. Them.</span> That is not a gap in our service. It is the point.<span class="deliv">First drafts</span></div></div>
     <div class="step">
       <div><span class="dot" style="background:#3f8a5b"></span><div class="name" style="color:#3f8a5b">Air</div><div class="ph">Fixing</div></div>
-      <div class="txt">We strengthen the architecture — does each essay do its job, sound like your child, and cohere as one portfolio.<span class="deliv">Revised drafts</span></div></div>
+      <div class="txt">We strengthen the structure — does each essay do its job, sound like your child, and hold together as one application?<span class="deliv">Revised drafts</span></div></div>
     <div class="step">
-      <div><span class="dot" style="background:#a98a55"></span><div class="name" style="color:#a98a55">Earth</div><div class="ph">Finalizing</div></div>
-      <div class="txt">Polish, compliance, and readiness. We call it <em>finalizing</em>, not finishing — the work isn't done until it is truly ready to submit.<span class="deliv">The final, submission-ready application</span></div></div>
+      <div><span class="dot" style="background:#9c8049"></span><div class="name" style="color:#9c8049">Earth</div><div class="ph">Finalizing</div></div>
+      <div class="txt">The last pass: polish, every requirement met, ready to submit. We call it finalizing, not finishing — the work isn't done until it's truly ready.<span class="deliv">The final application, ready to submit</span></div></div>
   </div>
-  <p class="coda">For 11th and 12th grade, the method also guides college selection — building the right list alongside the application, not after it.</p>
+  <div class="seehow"><a class="tlink" href="/method.html">Read the full method →</a></div>
 </div></section>
 
-<!-- 4 · WHAT A FAMILY RECEIVES -->
+<!-- WHAT YOU GET -->
 <section class="receives"><div class="wrap col">
-  <div class="eyebrow">What a family receives</div>
-  <div class="h2 serif">The method produces real things.</div>
-  <p class="body soft">Artifacts your child carries into every essay, every interview, every choice.</p>
-  <div class="artifacts">
-    <div class="artifact"><h3 class="serif">A Knowledge Base</h3><p>Everything that makes your child distinctive — the raw material of a life, gathered and understood before anyone writes a word.</p></div>
-    <div class="artifact"><h3 class="serif">An Applicant Profile</h3><p>The strategic identity at the center of the whole application — who your child is, in a way an admissions officer cannot forget.</p></div>
-    <div class="artifact"><h3 class="serif">A Focus Plan for every essay</h3><p>Exactly what each piece must do, and which ingredients belong in it.</p></div>
+  <div class="eyebrow">What you actually get</div>
+  <div class="h2 serif">Real things, not just edits.</div>
+  <div class="glist">
+    <div class="gitem"><h3 class="serif">A clear picture of your child</h3><p>Everything that makes them distinctive, gathered and understood before anyone writes a word.</p></div>
+    <div class="gitem"><h3 class="serif">A strategy for the whole application</h3><p>The one story at the center, and a plan for how every essay supports it.</p></div>
+    <div class="gitem"><h3 class="serif">Essays in your child's own voice</h3><p>Guided to excellence, written entirely by them — and a final application ready to submit.</p></div>
   </div>
-  <p class="close serif">Most families have never seen their child described this clearly. That clarity is the product. The essays are what it makes possible.</p>
+  <p class="close serif">Most families have never seen their child described this clearly. That clarity is the real product. The essays are what it makes possible.</p>
 </div></section>
 
-<!-- 5 · WHY QUINTESSENCE -->
+<!-- WHY -->
 <section class="why"><div class="wrap">
   <div class="eyebrow">Why Quintessence</div>
   <div class="grid">
-    <div class="conv"><h3 class="serif">Authenticity is the strategy</h3><p>We never ask what admissions officers want to hear. We find the one true story — your child's, in their own voice — and build everything around it.</p></div>
-    <div class="conv"><h3 class="serif">A method, not a service</h3><p>Not editing. Not access to a former admissions officer. A complete method — the Five Elements — that turns a capable student into an applicant a school remembers.</p></div>
-    <div class="conv"><h3 class="serif">Authorship, never ghostwriting</h3><p>Every word is your child's own, guided to excellence. That is not a gap in our service — it is the point, and it is what an admissions reader can feel on the page.</p></div>
-    <div class="conv"><h3 class="serif">One student, completely understood</h3><p>Built around a single applicant, from first strategy to final submission. A full replacement for the traditional counselor — and a good partner to one you already have.</p></div>
+    <div class="conv"><h3 class="serif">Honesty is the strategy</h3><p>We don't coach kids to say what they think colleges want to hear. We find the true story and build around it — it reads as real because it is.</p></div>
+    <div class="conv"><h3 class="serif">A method, not a service</h3><p>Not editing, and not a famous name to borrow. A clear method — the Five Elements — that takes a capable student and makes them an applicant a school remembers.</p></div>
+    <div class="conv"><h3 class="serif">Your child writes it</h3><p>Every word is theirs, guided to excellence. That is the point — and it's what an admissions reader can feel on the page.</p></div>
+    <div class="conv"><h3 class="serif">One student at a time</h3><p>Built around a single applicant, start to finish — a full replacement for the school counselor, and a good partner to one you already have.</p></div>
   </div>
 </div></section>
 
-<!-- 6 · WHAT YOU'RE REALLY BUYING -->
+<!-- SCHOOLS -->
+<section class="schools"><div class="wrap">
+  <div class="eyebrow">Where our students have gone</div>
+  <div class="list">
+    Harvard · Yale · Columbia · Cornell · Caltech · Duke · Penn · Carnegie Mellon · Northwestern ·
+    Johns Hopkins · Berkeley · UCLA · UC San Diego · Georgia Tech · Harvey Mudd · Washington ·
+    UT Austin · <b>Babson (full ride)</b> · Boston University · Pittsburgh
+  </div>
+  <div class="note">A sample of recent admissions. Students named only with permission.</div>
+</div></section>
+
+<!-- WHAT YOU'RE REALLY BUYING -->
 <section class="buying"><div class="wrap">
-  <div class="statement serif">A calmer process. A more confident, better-understood child. And a real, well-built shot at their first choice.</div>
-  <div class="sub">That is what a family actually takes home — long after the applications are in.</div>
+  <div class="statement serif">A calmer process. A more confident, better-understood child. And a real shot at their first choice.</div>
+  <div class="sub">That's what a family takes home — long after the applications are in.</div>
 </div></section>
 
-<!-- 7 · THE SEMINAR -->
+<!-- SEMINAR -->
 <section class="seminar" id="seminar"><div class="wrap col">
-  <div class="eyebrow">A complimentary seminar</div>
+  <div class="eyebrow">Start here — a free info session</div>
   <div class="h2 serif">What Colleges Want</div>
-  <p class="lede">An unhurried, honest walk through the entire admissions process — and how a standout application gets
-     built, one stage at a time. Come with your questions; we'll stay for a live conversation.</p>
+  <p class="lede">A calm, honest walk through the whole admissions process — and how a strong application actually gets
+     built, one stage at a time. Come with your questions; we'll stay for a live Q&amp;A.</p>
   <div class="learn">
-    <div class="it"><b>01</b> What top colleges truly evaluate, beyond grades and scores</div>
-    <div class="it"><b>02</b> The most common missteps families make — and how to avoid them</div>
-    <div class="it"><b>03</b> How a distinctive application is built, stage by stage</div>
-    <div class="it"><b>04</b> Where your child stands now, and the right first move</div>
+    <div class="it"><b>01</b> What selective colleges are really looking for, beyond grades and scores</div>
+    <div class="it"><b>02</b> How a distinctive, honest application gets built — stage by stage</div>
+    <div class="it"><b>03</b> Where your child stands now, and the right first step</div>
   </div>
-  <div class="facts">Sunday, July 12 &nbsp;·&nbsp; 8:00 PM EDT &nbsp;·&nbsp; Live on Zoom</div>
+  <div class="facts">Sunday, July 12 &nbsp;·&nbsp; 8:00 PM EDT &nbsp;·&nbsp; Live on Zoom · free</div>
   <div class="partner">In partnership with <b>GRACE</b> — the Greater Roslyn Association for Chinese Enrichment. Mandarin language support available.</div>
-  <div class="aoe">The seminar is also your introduction to <b style="color:#fff">Art of the Essay</b>, the workshop where students learn the method firsthand.</div>
-  <div class="row"><a class="btn btn-light" href="#rsvp">Reserve your place</a></div>
+  <div class="row"><a class="btn btn-light" href="#book">Reserve your place</a></div>
 </div></section>
 
-<!-- 8 · THE PATH FORWARD -->
-<section class="path"><div class="wrap col">
-  <div class="eyebrow">Beyond the seminar</div>
-  <div class="h2 serif">Every family's path is different.</div>
-  <p class="body">When you're ready, the next step is a private consultation — a focused conversation about your child,
-     where they stand, and how the method would shape their particular road to college.</p>
-  <p class="body soft">No script, no pressure. Just the beginning of the work.</p>
-  <div style="margin-top:34px"><a class="btn btn-dark" href="#rsvp">Request a consultation</a></div>
-</div></section>
-
-<!-- 9 · THE FIRM & THE FOUNDER -->
-<section class="founder"><div class="wrap col">
-  <div class="eyebrow">Why trust this</div>
-  <div class="lead serif">A firm built on a method — with a founder as its proof.</div>
-  <p class="body">Quintessence was founded by <b>Adam Obedian</b>, a graduate of Columbia University, to distill years of
-     guiding students into their top-choice schools into a single, repeatable method: the strategy, the storytelling,
-     and the discipline that turn a capable student into the applicant only they could be.</p>
-  <p class="body soft">What began as one counselor's craft is now a firm — a method, a team, and a standard — so that
-     every family receives the same depth of attention, built entirely around their one child.</p>
-</div></section>
-
-<!-- RSVP -->
-<section class="rsvp" id="rsvp"><div class="wrap">
+<!-- BOOK — the pipeline -->
+<section class="book" id="book"><div class="wrap">
   <div class="eyebrow">Begin</div>
-  <div class="h2 serif">Tell us where to begin.</div>
-  <p class="lede">Share a few details and we'll be in touch — with your seminar link, or to arrange a private consultation.</p>
-  <!-- STOPGAP: mailto fallback so submissions aren't lost. Replace with a Formspree endpoint (qiadmissions@gmail.com) for proper capture — ~2 min. -->
+  <div class="h2 serif">The best place to start is the free session.</div>
+  <p class="body soft">Most families begin at the July-12 info session — no cost, no commitment. If you'd rather talk one-on-one, you can book a private consultation instead. Either way, just tell us below.</p>
+  <div class="opts">
+    <div class="opt primary"><div class="tag">Start here · Free</div><h3 class="serif">The Info Session</h3><p>Sunday, July 12 · 8 PM EDT, on Zoom. A calm overview of the whole process, with live Q&amp;A. The best first step for any family.</p><a class="pick" href="#rsvp">Reserve a seat ↓</a></div>
+    <div class="opt"><div class="tag">One-on-one</div><h3 class="serif">A Private Consultation</h3><p>A focused conversation about your child specifically — where they stand, and the smartest first moves.</p><a class="pick" href="#rsvp">Request a time ↓</a></div>
+    <div class="opt"><div class="tag">The course</div><h3 class="serif">Art of the Essay</h3><p>Our lecture series on the method — how to write a standout, authentic essay — paired with a consultation.</p><a class="pick" href="#rsvp">Ask about it ↓</a></div>
+  </div>
+</div></section>
+
+<!-- RSVP form -->
+<section class="rsvp" id="rsvp"><div class="wrap">
+  <div class="eyebrow">Tell us where to begin</div>
+  <div class="h2 serif">A few details, and we'll be in touch.</div>
+  <p class="lede">Choose what you'd like below. We'll follow up with your Zoom link, or with times for a consultation.</p>
+  <!-- STOPGAP: mailto fallback. Replace with a Formspree endpoint (qiadmissions@gmail.com) for proper capture. -->
   <form action="mailto:qiadmissions@gmail.com" method="post" enctype="text/plain">
+    <div class="full"><label>I'd like to —</label>
+      <select name="interest">
+        <option>Join the free info session (July 12)</option>
+        <option>Book a private consultation</option>
+        <option>Art of the Essay lecture series (+ consultation)</option>
+        <option>Not sure yet — please tell me more</option>
+      </select></div>
     <div><label>Parent first name</label><input name="parent_first" required></div>
     <div><label>Parent last name</label><input name="parent_last" required></div>
     <div><label>Student first name</label><input name="student_first"></div>
     <div><label>Student last name</label><input name="student_last"></div>
     <div><label>Email</label><input type="email" name="email" required></div>
     <div><label>Phone (call · text · WhatsApp)</label><input name="phone"></div>
-    <div><label>WeChat ID (optional)</label><input name="wechat"><div class="hint">Prefer WeChat? Add your ID.</div></div>
+    <div><label>WeChat ID (optional)</label><input name="wechat"></div>
     <div><label>Student's status this coming fall (2026–27)</label>
-      <select name="status">
-        <option value="">Select…</option>
-        <option>9th grade (Freshman)</option><option>10th grade (Sophomore)</option>
-        <option>11th grade (Junior)</option><option>12th grade (Senior)</option>
-        <option>College transfer applicant</option><option>Already graduated / gap year</option>
-        <option>Younger (8th grade or below)</option>
-      </select></div>
-    <div><label>Student's high school</label>
-      <input name="high_school" list="hs" autocomplete="off"><div class="hint">Start typing — pick yours or add it.</div>
-      <datalist id="hs">
-        <!-- Long Island -->
-        <option>Herricks High School</option><option>Roslyn High School</option>
-        <option>Great Neck South</option><option>Great Neck North</option>
-        <option>Jericho High School</option><option>Syosset High School</option>
-        <option>Manhasset High School</option><option>Paul D. Schreiber (Port Washington)</option>
-        <option>Wheatley School (East Williston)</option><option>Cold Spring Harbor</option>
-        <option>Great Neck (other)</option>
-        <!-- Specialized / magnet -->
-        <option>Stuyvesant High School</option><option>Bronx High School of Science</option>
-        <option>Brooklyn Technical High School</option><option>Hunter College High School</option>
-        <option>Townsend Harris High School</option><option>Staten Island Technical High School</option>
-        <!-- Elite independent -->
-        <option>Horace Mann School</option><option>Trinity School</option><option>The Dalton School</option>
-        <option>Riverdale Country School</option><option>Ethical Culture Fieldston</option>
-        <option>Collegiate School</option><option>The Brearley School</option><option>The Spence School</option>
-        <option>The Chapin School</option><option>Ramaz School</option><option>Hackley School</option>
-        <option>Poly Prep Country Day</option><option>Friends Seminary</option><option>Saint Ann's School</option>
-        <option>Other — type to add</option>
-      </datalist></div>
-    <div><label>Preferred language</label>
-      <select name="language"><option>English</option><option>中文 (Mandarin)</option><option>No preference</option></select>
-      <div class="hint">Mandarin language support available.</div></div>
-    <div class="full"><label>How did you hear about us?</label>
-      <select name="referral">
-        <option value="">Select…</option>
-        <option>GRACE (Roslyn Chinese Enrichment)</option>
-        <option>A friend or family member</option>
-        <option>WeChat group</option>
-        <option>A current or past client</option>
-        <option>My child's school</option>
-        <option>Online search</option>
-        <option>Other</option>
-      </select></div>
-    <div class="full"><label>What would you most like us to address? (optional)</label><input name="question"></div>
+      <select name="status"><option value="">Select…</option><option>9th grade (Freshman)</option><option>10th grade (Sophomore)</option><option>11th grade (Junior)</option><option>12th grade (Senior)</option><option>College transfer applicant</option><option>Already graduated / gap year</option><option>Younger (8th or below)</option></select></div>
+    <div><label>Student's high school</label><input name="high_school" list="hs" autocomplete="off">
+      <datalist id="hs"><option>Herricks High School</option><option>Roslyn High School</option><option>Great Neck South</option><option>Great Neck North</option><option>Jericho High School</option><option>Syosset High School</option><option>Manhasset High School</option><option>Paul D. Schreiber (Port Washington)</option><option>Stuyvesant High School</option><option>Bronx High School of Science</option><option>Hunter College High School</option><option>Horace Mann School</option><option>Trinity School</option><option>The Dalton School</option><option>Ramaz School</option><option>Wheatley School (East Williston)</option></datalist></div>
+    <div><label>Preferred language</label><select name="language"><option>English</option><option>中文 (Mandarin)</option><option>No preference</option></select><div class="hint">Mandarin language support available.</div></div>
+    <div><label>How did you hear about us?</label><select name="referral"><option value="">Select…</option><option>GRACE (Roslyn Chinese Enrichment)</option><option>A friend or family member</option><option>WeChat group</option><option>A current or past client</option><option>My child's school</option><option>Online search</option><option>Other</option></select></div>
+    <div class="full"><label>Anything you'd like us to know? (optional)</label><input name="note"></div>
     <button class="full" type="submit">Send</button>
   </form>
 </div></section>
 
+<!-- FOUNDER -->
+<section class="founder" id="founder"><div class="wrap col">
+  <div class="eyebrow">The founder</div>
+  <div class="h2 serif">Adam Obedian</div>
+  <p class="body">Adam founded Quintessence to turn years of guiding students into their top-choice schools into a single,
+     clear method. He studied <b>Philosophy and Drama at Columbia University</b> — the training of a writer and a
+     reader of people, which is exactly what this work asks for: finding the true shape of a student's story, and
+     helping them tell it in their own voice.</p>
+  <p class="body soft">What began as one person's craft is now a firm — a method, a team, and a standard — so every
+     family gets the same depth of attention, built entirely around their one child.</p>
+</div></section>
+
 <footer><div class="wrap">
-  <div>
-    <div class="fmark serif">Quintessence</div>
-    <div class="fdesc">Private College Counseling &amp; Application Advisory</div>
-  </div>
+  <div><div class="fmark serif">Quintessence</div><div class="fdesc">Private College Counseling &amp; Application Advisory</div></div>
   <div class="fmeta"><span class="qimono">QI</span><br>qiadmissions.com<br>© 2026 Quintessence</div>
 </div></footer>
 

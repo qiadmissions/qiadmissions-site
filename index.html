@@ -46,6 +46,11 @@
   .navlinks{ display:flex; gap:22px; align-items:center; }
   .navlink{ font-size:12px; letter-spacing:.16em; text-transform:uppercase; color:var(--ink); text-decoration:none; }
   .navlink:hover{ color:var(--accent); }
+  .navurl{ font-size:12px; letter-spacing:.06em; color:var(--accent); text-decoration:none; font-weight:700; }
+  .navurl:hover{ color:var(--ink); }
+  .team{ margin-top:46px; border-top:1px solid var(--line); padding-top:30px; }
+  .team h3{ font-family:var(--serif); font-weight:600; font-size:24px; }
+  .team p{ font-size:17px; color:var(--soft); line-height:1.7; margin-top:12px; }
 
   /* hero — QI above Quintessence */
   .hero{ text-align:center; padding:108px 0 96px; }
@@ -149,6 +154,7 @@
 <nav><div class="wrap">
   <div class="navbrand"><span class="navqi">QI</span><span class="navmark">Quintessence</span></div>
   <div class="navlinks">
+    <a class="navurl" href="https://qiadmissions.com">qiadmissions.com</a>
     <a class="navlink" href="/method.html">The Method</a>
     <a class="navlink" href="#book">Begin</a>
   </div>
@@ -157,7 +163,6 @@
 <!-- HERO -->
 <header class="hero"><div class="wrap">
   <div class="eyebrow">Private College Counseling &amp; Application Advisory</div>
-  <div class="qimark">QI</div>
   <div class="brandhero serif">Quintessence</div>
   <p class="defn"><b>quin·tes·sence</b> <i>(n.)</i> — the fifth and purest essence; the truest expression of what something is.</p>
   <p class="herosub">We help your child figure out who they really are — and turn it into an application that is
@@ -191,10 +196,10 @@
       <div class="txt">We start by getting clear on two things: what colleges are really looking for, and everything your child has to work with. This is also where the school list takes shape.<span class="deliv">Student Profile · the right school list · the overall plan</span></div></div>
     <div class="step">
       <div><span class="dot" style="background:#b3322a"></span><div class="name" style="color:#b3322a">Fire</div><div class="ph">Focusing</div></div>
-      <div class="txt">We find the core — the one true through-line that ties a whole life into a single, clear story — and turn it into a plan for every essay.<span class="deliv">An archetype · a blueprint for each essay</span></div></div>
+      <div class="txt">We find the core — the one true through-line that ties a whole life into a single, clear story — and turn it into a plan for every essay.<span class="deliv">An archetype · an Essay Blueprint for each essay</span></div></div>
     <div class="step">
       <div><span class="dot" style="background:#2f6fb0"></span><div class="name" style="color:#2f6fb0">Water</div><div class="ph">Flowing</div></div>
-      <div class="txt">Your child writes — every word, in their own voice. <span class="heartbeat">Not AI. Not us. Them.</span> That is not a gap in our service. It is the point.<span class="deliv">First drafts</span></div></div>
+      <div class="txt">Your child writes the essays, in their own voice, working from the blueprint. We guide; they write.<span class="deliv">First drafts, entirely their own</span></div></div>
     <div class="step">
       <div><span class="dot" style="background:#3f8a5b"></span><div class="name" style="color:#3f8a5b">Air</div><div class="ph">Fixing</div></div>
       <div class="txt">We strengthen the structure — does each essay do its job, sound like your child, and hold together as one application?<span class="deliv">Revised drafts</span></div></div>
@@ -223,8 +228,24 @@
   <div class="grid">
     <div class="conv"><h3 class="serif">Authentic and strategic</h3><p>We help your child find what's genuinely theirs, and shape it around what selective colleges are actually looking for. The most honest application is usually the strongest one.</p></div>
     <div class="conv"><h3 class="serif">A clear method</h3><p>The Five Elements — a step-by-step way of building a distinctive, well-made application, with the same care every time.</p></div>
-    <div class="conv"><h3 class="serif">Your child writes it</h3><p>Every word is theirs, guided to excellence. That's the point — and it's what an admissions reader can feel on the page.</p></div>
+    <div class="conv"><h3 class="serif">Excellence is the difference</h3><p>We hold every application to one standard: the best version of itself, particular to the single student it belongs to.</p></div>
     <div class="conv"><h3 class="serif">One student at a time</h3><p>Built around a single student, start to finish, with real attention to who they are and where they're going.</p></div>
+  </div>
+</div></section>
+
+<!-- FOUNDER + TEAM (who you're working with — the people) -->
+<section class="founder" id="founder"><div class="wrap col">
+  <div class="eyebrow">Who you're working with</div>
+  <div class="h2 serif">Adam Obedian</div>
+  <p class="body">Adam founded Quintessence to turn years of guiding students into their top-choice schools into a
+     single, clear method. He studied <b>Philosophy and Drama at Columbia</b> — a writer's training, and a reader of
+     people. That craft is the center of how Quintessence works: finding the true shape of a student's story, and
+     helping them tell it in their own voice.</p>
+  <div class="team">
+    <h3 class="serif">A firm, not a solo act</h3>
+    <p>Quintessence is built as a firm — a method, a trained team, and one standard — not a single person's calendar.
+       Students are guided by advisors trained directly in the Five Elements, while Adam holds the strategy and the
+       standard across every application, so the depth of attention stays the same, family to family.</p>
   </div>
 </div></section>
 
@@ -305,18 +326,6 @@
     <label class="full" style="font-size:14px;color:var(--soft);text-transform:none;letter-spacing:0;font-weight:400;display:block"><input type="checkbox" name="email_consent" value="yes" style="margin-right:8px">Yes — I'd like to receive emails from Quintessence: my Zoom link, and occasional admissions insights. You can unsubscribe anytime.</label>
     <button class="full" type="submit">Send</button>
   </form>
-</div></section>
-
-<!-- FOUNDER -->
-<section class="founder" id="founder"><div class="wrap col">
-  <div class="eyebrow">The founder</div>
-  <div class="h2 serif">Adam Obedian</div>
-  <p class="body">Adam founded Quintessence to turn years of guiding students into their top-choice schools into a single,
-     clear method. He studied <b>Philosophy and Drama at Columbia University</b> — the training of a writer and a
-     reader of people, which is exactly what this work asks for: finding the true shape of a student's story, and
-     helping them tell it in their own voice.</p>
-  <p class="body soft">What began as one person's craft is now a firm — a method, a team, and a standard — so every
-     family gets the same depth of attention, built entirely around their one child.</p>
 </div></section>
 
 <footer><div class="wrap">

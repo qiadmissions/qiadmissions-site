@@ -293,8 +293,14 @@
   <div class="eyebrow">Tell us where to begin</div>
   <div class="h2 serif">A few details, and we'll be in touch.</div>
   <p class="lede">Choose what you'd like below. We'll follow up with your Zoom link, or with times for a consultation.</p>
-  <!-- STOPGAP: mailto fallback. Replace with a Formspree endpoint (qiadmissions@gmail.com) for proper capture. -->
-  <form action="mailto:qiadmissions@gmail.com" method="post" enctype="text/plain">
+  <!-- RSVP capture via Web3Forms (free, no account). ACTIVATE: go to web3forms.com, enter qiadmissions@gmail.com,
+       verify, copy the Access Key, and paste it into the access_key value below. Submissions then email qiadmissions@gmail.com. -->
+  <form action="https://api.web3forms.com/submit" method="POST">
+    <input type="hidden" name="access_key" value="PASTE_WEB3FORMS_ACCESS_KEY">
+    <input type="hidden" name="subject" value="New Quintessence Info-Session RSVP">
+    <input type="hidden" name="from_name" value="Quintessence · qiadmissions.com">
+    <input type="hidden" name="redirect" value="https://qiadmissions.com/thanks.html">
+    <input type="checkbox" name="botcheck" style="display:none !important" tabindex="-1" autocomplete="off">
     <div class="full"><label>You're reserving a seat at —</label>
       <div style="font-family:var(--serif);font-size:20px;color:var(--accent);padding:4px 0 2px">The Free Info Session · Sunday, July 12, 8 PM EDT</div>
       <label style="display:block;font-size:14px;color:var(--soft);margin-top:10px;text-transform:none;letter-spacing:0;font-weight:400"><input type="checkbox" name="addon_consult" value="yes" style="margin-right:8px">I'd also like a Private Consultation, to begin sooner</label>

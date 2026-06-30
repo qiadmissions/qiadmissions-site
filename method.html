@@ -1,5 +1,7 @@
 <!doctype html>
-<!-- Quintessence — The Method (page 2). Rewritten in the clear, plain voice (not literary/AI), per Adam 2026-06-30. Hanken Grotesk + Cormorant, QI present. noindex. -->
+<!-- Quintessence — The Method (page 2). Rewritten as a DESCRIPTIVE account grounded in QUINTESSENCE-VISION (Adam 2026-06-30):
+     philosophy · the 9th->12th arc · the essay process · the specialty / excellence as differentiator. Calm, descriptive,
+     prestige-by-restraint — NOT teaching/pedantic, no competitor contrasts, authorship stated once not belabored. Mulish + Cormorant. noindex. -->
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -7,19 +9,19 @@
 <meta name="color-scheme" content="light">
 <meta name="robots" content="noindex">
 <title>The Method — Quintessence</title>
-<meta property="og:title" content="The Quintessence Method — how the whole thing works">
+<meta property="og:title" content="How Quintessence works">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%2315171c'/%3E%3Ctext x='50' y='68' font-family='Georgia,serif' font-size='42' letter-spacing='1' fill='%23f6f4ef' text-anchor='middle'%3EQI%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Mulish:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{ color-scheme:light; --bg:#f6f4ef; --paper:#fbfaf7; --ink:#191b1f; --soft:#5a5d63; --line:#e2ddd3;
     --accent:#6d1f2c; --navy:#0e2a3a; --gold:#9c8049;
-    --serif:'Cormorant Garamond',Georgia,serif; --sans:'Hanken Grotesk',system-ui,-apple-system,Arial,sans-serif; }
+    --serif:'Cormorant Garamond',Georgia,serif; --sans:'Mulish',system-ui,-apple-system,Arial,sans-serif; }
   *{ box-sizing:border-box; margin:0; padding:0; }
   html{ scroll-behavior:smooth; } body{ background:var(--bg); color:var(--ink); font-family:var(--sans); line-height:1.75; }
   .serif{ font-family:var(--serif); font-weight:600; } a{ color:inherit; }
   nav{ position:sticky; top:0; z-index:20; background:rgba(246,244,239,.93); -webkit-backdrop-filter:blur(10px); backdrop-filter:blur(10px); border-bottom:1px solid var(--line); }
-  nav .wrap{ max-width:1040px; margin:0 auto; padding:0 28px; display:flex; align-items:center; justify-content:space-between; min-height:64px; gap:12px; flex-wrap:wrap; }
+  nav .wrap{ max-width:1040px; margin:0 auto; padding:0 28px; display:flex; align-items:center; justify-content:space-between; min-height:64px; gap:12px; }
   .navbrand{ display:flex; align-items:baseline; gap:10px; text-decoration:none; }
   .navqi{ font-family:var(--serif); font-weight:600; font-size:20px; letter-spacing:.08em; color:var(--accent); }
   .navmark{ font-family:var(--serif); font-weight:600; font-size:21px; letter-spacing:.02em; color:var(--ink); }
@@ -34,23 +36,17 @@
   p{ font-size:18px; line-height:1.8; margin-top:18px; }
   p.soft{ color:var(--soft); } strong{ font-weight:600; } em{ font-style:italic; }
 
-  .elements{ margin-top:28px; }
-  .el{ padding:32px 0; border-top:1px solid var(--line); } .el:last-child{ border-bottom:1px solid var(--line); }
-  .el .head{ display:flex; align-items:center; gap:16px; }
-  .el .dot{ width:13px; height:13px; border-radius:50%; border:1px solid rgba(0,0,0,.14); flex:0 0 auto; }
-  .el .name{ font-family:var(--serif); font-weight:600; font-size:29px; }
-  .el .ph{ font-size:11px; letter-spacing:.18em; text-transform:uppercase; color:var(--soft); }
-  .el p{ margin-top:14px; }
-  .el .produces{ margin-top:16px; padding-left:18px; border-left:2px solid var(--line); }
-  .el .produces .k{ font-size:11px; letter-spacing:.18em; text-transform:uppercase; color:var(--gold); }
-  .el .produces p{ font-family:var(--serif); font-size:18px; color:var(--navy); margin-top:5px; line-height:1.5; }
+  .elements{ margin-top:24px; }
+  .el{ padding:24px 0; border-top:1px solid var(--line); display:flex; gap:18px; align-items:flex-start; } .el:last-child{ border-bottom:1px solid var(--line); }
+  .el .dot{ width:13px; height:13px; border-radius:50%; border:1px solid rgba(0,0,0,.14); flex:0 0 auto; margin-top:8px; }
+  .el .body .name{ font-family:var(--serif); font-weight:600; font-size:24px; display:inline; }
+  .el .body .ph{ font-size:11px; letter-spacing:.18em; text-transform:uppercase; color:var(--soft); margin-left:10px; }
+  .el .body p{ margin-top:8px; font-size:17px; }
 
-  .aside{ background:var(--paper); border:1px solid var(--line); padding:28px 30px; margin:42px 0; }
+  .aside{ background:var(--paper); border:1px solid var(--line); padding:26px 30px; margin:40px 0; }
   .aside .k{ font-size:11px; letter-spacing:.26em; text-transform:uppercase; color:var(--gold); }
-  .aside p{ font-family:var(--serif); font-size:21px; line-height:1.5; margin-top:10px; }
-  .closing{ text-align:center; margin:60px 0 8px; }
-  .closing p{ font-family:var(--serif); font-size:clamp(22px,3vw,29px); line-height:1.4; max-width:28ch; margin:0 auto; }
-  .endcta{ text-align:center; padding:26px 0 86px; }
+  .aside p{ font-family:var(--serif); font-size:21px; line-height:1.5; margin-top:10px; color:var(--navy); }
+  .endcta{ text-align:center; padding:46px 0 86px; }
   .btn{ font-size:12.5px; letter-spacing:.16em; text-transform:uppercase; text-decoration:none; padding:16px 30px; display:inline-block; background:var(--ink); color:var(--paper); } .btn:hover{ background:var(--accent); }
   .backlink{ display:block; margin-top:22px; font-size:12px; letter-spacing:.13em; text-transform:uppercase; color:var(--soft); text-decoration:none; }
   footer{ padding:54px 0 70px; border-top:1px solid var(--line); }
@@ -69,102 +65,71 @@
 
 <article class="article">
   <div class="eyebrow">The Method</div>
-  <h1 class="serif">How the whole thing works.</h1>
-  <p class="standfirst">This is the longer version, for the parent who wants to understand exactly what we do: the
-     idea behind it, the five stages, how we work with one student, and what you actually end up with.</p>
+  <h1 class="serif">How Quintessence works.</h1>
+  <p class="standfirst">An account of the philosophy behind the firm, the way we work with a student from ninth grade
+     through senior year, the essay process itself, and what makes the work excellent.</p>
   <div class="rule"></div>
 
-  <h2>The name is the point</h2>
-  <p>Quintessence means the fifth essence. The old idea was that beyond earth, water, air, and fire there was a fifth,
-     purer element — what's left when you strip away everything that isn't essential. We took the name on purpose,
-     because that's the job.</p>
-  <p>For most families, the application is an assembly job: fill in the forms, list the activities, write essays to fit
-     the prompts, and hope it adds up. We start somewhere else — before any of that — by helping a student figure out
-     who they actually are, and what's genuinely theirs to say. The application is just where that becomes visible to
-     a stranger. Our real work is earlier — helping a student understand themselves well enough that the truest version
-     of their story is also the strongest one.</p>
-
-  <h2>Honesty is the strategy</h2>
-  <p>Most admissions advice quietly asks one question: <em>what do they want to hear?</em> It treats the application
-     as a performance. The problem is that admissions officers read thousands of performances a year, and they can
-     tell the difference between a person and an act in the first sentence.</p>
-  <p>We work the other way, and this is the center of everything: <strong>the most strategic story and the most honest
-     story are the same story.</strong> What's actually distinctive about a kid — how they really think, the thing they
-     can't stop caring about, the experience that quietly shaped the rest — is usually also the most compelling thing
-     they could put in front of a committee. Honest and effective aren't a trade-off here — the work is finding the
-     true thing and telling it well.</p>
-  <p>It's also the practical choice. An invented angle can be polished but never deepened — there's nothing under it.
-     A true story holds up the harder you work it.</p>
-
-  <h2>A method, not a formula</h2>
-  <p>Some college consulting runs on templates — a formula for the personal statement, a stock structure for the
-     supplements, a system that, fed enough students, produces enough acceptances. The appeal is obvious. A formula is
-     calming; it promises the whole messy thing can be reduced to steps.</p>
-  <p>But we don't run students through a template — too much is at stake, and no two are alike. Think of it more like
-     cooking. A student shows up with a pantry — everything they've done, felt, gotten through, and gotten curious
-     about. Most of it looks ordinary at first: the move between countries, the after-school job, the obsession nobody
-     else gets, the failure that never quite resolved. The work is in the composition — knowing which pieces belong
-     together, what to lead with and what to hold back, how to make something an admissions officer doesn't want to
-     put down. The ingredients of one life, put together into something true.</p>
+  <h2>The name</h2>
+  <p>Quintessence is the fifth essence — in the old cosmology, the pure element beyond earth, water, air, and fire,
+     what remains when everything inessential is stripped away. The firm is named for that idea rather than for the
+     service, because the work begins there: helping a student discover, cultivate, and communicate the deepest essence
+     of who they are. The application is where that becomes visible to a college. It is the expression of the
+     philosophy, not the philosophy itself.</p>
+  <p>We treat an application as an art rather than a machine — a composition built from the real material of one
+     student's life, not a form filled against a template.</p>
 
   <h2>The Five Elements</h2>
-  <p class="soft">The method has five stages, run in order — from the most open to the most finished. Each has a name
-     for what it is and a name for what the student is doing in it.</p>
+  <p class="soft">The method moves through five stages, in order, from the most open to the most finished. They give the
+     name its second meaning — <em>quint-essence</em>, the five elements — and the same five shape a single essay, the
+     whole application, and the years that lead up to it.</p>
   <div class="elements">
-    <div class="el"><div class="head"><span class="dot" style="background:#efe9da"></span><span class="name" style="color:#9a8a66">Space</span><span class="ph">Framing</span></div>
-      <p><strong>Set the table.</strong> Before we talk about a single essay, we get clear on what colleges are really
-         looking for and on everything that makes this particular student who they are — facts, stories, offhand
-         remarks, things they'd never think to mention. This is also where the <strong>school list</strong> gets
-         built, alongside the student rather than handed down. We err on the side of gathering too much; the richer the
-         raw material, the truer the result.</p>
-      <div class="produces"><div class="k">What it produces</div><p>A clear picture of the student, the right school list, and the overall plan.</p></div></div>
-    <div class="el"><div class="head"><span class="dot" style="background:#b3322a"></span><span class="name" style="color:#b3322a">Fire</span><span class="ph">Focusing</span></div>
-      <p><strong>Find the core.</strong> Gathering isn't yet a strategy. This is where it becomes one — pulling the
-         scattered pieces into one clear identity, the through-line that makes a whole life suddenly read as one person.
-         It's the most important thinking in the process, because everything after it follows from here.</p>
-      <div class="produces"><div class="k">What it produces</div><p>An archetype — the student's strategic identity — and a clear plan for every essay.</p></div></div>
-    <div class="el"><div class="head"><span class="dot" style="background:#2f6fb0"></span><span class="name" style="color:#2f6fb0">Water</span><span class="ph">Flowing</span></div>
-      <p><strong>The student writes.</strong> With the plan in hand, they put it into words — in their own voice. This
-         stage can feel slow, but it's where the best, most surprising material shows up. Our job is to hold the
-         structure steady and keep them writing toward it. We never write a word of it.</p>
-      <div class="produces"><div class="k">What it produces</div><p>First drafts — every word the student's own.</p></div></div>
-    <div class="el"><div class="head"><span class="dot" style="background:#3f8a5b"></span><span class="name" style="color:#3f8a5b">Air</span><span class="ph">Fixing</span></div>
-      <p><strong>Strengthen the structure.</strong> Now we revise — at the level of argument and shape, not commas.
-         Does each essay do its job? Does it still sound like this student? Does it avoid repeating what another essay
-         already says, so the whole thing reads as one application instead of a stack of separate tries?</p>
-      <div class="produces"><div class="k">What it produces</div><p>Revised drafts that carry their weight and hold together.</p></div></div>
-    <div class="el"><div class="head"><span class="dot" style="background:#9c8049"></span><span class="name" style="color:#9c8049">Earth</span><span class="ph">Finalizing</span></div>
-      <p><strong>Bring it to a finish.</strong> The last pass — line-level polish, every requirement met, every detail
-         clean, ready to submit. We call this finalizing, not finishing, on purpose. <em>Finishing</em> sounds done;
-         <em>finalizing</em> is the honest word for the real work between a strong draft and something worth sending.</p>
-      <div class="produces"><div class="k">What it produces</div><p>The final application, ready to submit.</p></div></div>
+    <div class="el"><span class="dot" style="background:#efe9da"></span><div class="body">
+      <span class="name" style="color:#9a8a66">Space</span><span class="ph">Framing</span>
+      <p>We gather. Everything that makes a student who they are, and a clear read of what their colleges look for. For
+         younger students this is also where the path begins to take shape; for seniors, where the school list is built.</p></div></div>
+    <div class="el"><span class="dot" style="background:#b3322a"></span><div class="body">
+      <span class="name" style="color:#b3322a">Fire</span><span class="ph">Focusing</span>
+      <p>The material becomes a strategy — a single, clear identity the whole application is built to express.</p></div></div>
+    <div class="el"><span class="dot" style="background:#2f6fb0"></span><div class="body">
+      <span class="name" style="color:#2f6fb0">Water</span><span class="ph">Flowing</span>
+      <p>The student writes, in their own voice, with that strategy in hand.</p></div></div>
+    <div class="el"><span class="dot" style="background:#3f8a5b"></span><div class="body">
+      <span class="name" style="color:#3f8a5b">Air</span><span class="ph">Fixing</span>
+      <p>We revise for structure and coherence — so each piece does its work and the whole reads as one application.</p></div></div>
+    <div class="el"><span class="dot" style="background:#9c8049"></span><div class="body">
+      <span class="name" style="color:#9c8049">Earth</span><span class="ph">Finalizing</span>
+      <p>The last pass — polish, compliance, readiness. We call it finalizing rather than finishing, because the work
+         between a strong draft and a finished one is real.</p></div></div>
   </div>
-  <div class="aside"><div class="k">One shape, at every size</div>
-    <p>The same five stages that shape a single essay shape the whole application — and, for a family that starts early,
-       the student's path from one grade to the next. It's the same method, applied with the same care, at every scale.</p></div>
 
-  <h2>One student at a time</h2>
-  <p>All of this is built around a single student. The depth we're after only works one student at a time.</p>
-  <p>Two things hold the work together. The first is real rapport — knowing a student well enough that they'll tell you
-     the true thing, which is the only thing worth building on. The second is that they stay the author the whole way.</p>
-  <p>We want to be plain about this, because it's the line we won't cross: <strong>your child writes the essays.</strong>
-     We don't write a draft for them to approve, and no tool writes it either. We guide; they write. <em>Not us. Not
-     anyone else. Them.</em> That's not a gap in our service. That's the point — it keeps the voice theirs, and it
-     leaves a student who can stand behind every sentence.</p>
+  <h2>From ninth grade to senior year</h2>
+  <p>We work with families across the whole arc, not only in the final year. For younger students the work is
+     counseling — building toward a strong application over several years: the activities and direction, the developing
+     sense of who the student is becoming, and in time the right list of schools. For seniors it is the application
+     itself, the full method run from first strategy to final submission across the application season.</p>
+  <p>Either way it is one advisory built around a single student — a complete relationship, not a service brought in
+     for a single task.</p>
 
-  <h2>What you end up with</h2>
-  <p>Concretely: a clear picture of your child, a strategy that organizes the whole application, a plan for every
-     essay, drafts in their own voice, and a finished application ready to submit.</p>
-  <p>And underneath that, a student who, by the end, understands themselves a little better than they did at the
-     start — with an application that is genuinely, honestly theirs.</p>
+  <h2>The essay process</h2>
+  <p>The essays are where most of the visible work happens. Each one starts with a plan: what the essay is for, which
+     part of the student's story it carries, and how it fits alongside the rest. From there the student writes, and we
+     guide the structure and the strategy, draft after draft, until each essay does its job and sounds unmistakably
+     like them.</p>
+  <p>The student is the author throughout. We guide; they write — and that is as much a matter of quality as of
+     principle, because the strongest application is the one that is genuinely theirs.</p>
 
-  <h2>The craft behind it</h2>
-  <p>An application comes down to how clearly the <em>applicant</em> comes through on the page — and that's a question
-     of story, strategy, and writing. That's the craft we're built around.</p>
-  <p>Adam Obedian, who founded Quintessence, studied <strong>Philosophy and Drama at Columbia</strong> — the training
-     of a writer and a reader of people, which is exactly what this work needs.</p>
+  <h2>Our specialty</h2>
+  <p>What we do best, above everything, is narrative — finding the true story in a life and building an application
+     around it. That is a writer's craft, and it is the center of the firm. We hold every application to one standard:
+     that it be the best version of itself, particular to the single student it belongs to. Excellence, not pedigree,
+     is the difference.</p>
+  <p>Adam Obedian, who founded Quintessence, studied Philosophy and Drama at Columbia. Most families begin with
+     <strong>Art of the Essay</strong>, the course where a student first learns the method.</p>
 
-  <div class="closing"><p class="serif">The whole of it: help a student figure out who they really are, then get it on the page. Done honestly, that's also the strongest application they can send.</p></div>
+  <div class="aside"><div class="k">What it comes to</div>
+    <p>A student who finishes the process understanding themselves more clearly than when they began — and an
+       application that is, in every line, genuinely their own.</p></div>
 </article>
 
 <div class="endcta">

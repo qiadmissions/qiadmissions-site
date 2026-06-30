@@ -283,8 +283,17 @@
     <div><label>Student first name</label><input name="student_first"></div>
     <div><label>Student last name</label><input name="student_last"></div>
     <div><label>Email</label><input type="email" name="email" required></div>
-    <div><label>Phone (call · text · WhatsApp)</label><input name="phone"></div>
+    <div><label>Phone</label><input name="phone"></div>
+    <div><label>WhatsApp (if different)</label><input name="whatsapp"></div>
     <div><label>WeChat ID (optional)</label><input name="wechat"></div>
+    <div class="full"><label>Preferred way(s) to reach you</label>
+      <div style="display:flex;flex-wrap:wrap;gap:12px 18px;margin-top:8px">
+        <label style="font-size:14px;color:var(--soft);text-transform:none;letter-spacing:0;font-weight:400"><input type="checkbox" name="contact_pref" value="Call" style="margin-right:7px">Call</label>
+        <label style="font-size:14px;color:var(--soft);text-transform:none;letter-spacing:0;font-weight:400"><input type="checkbox" name="contact_pref" value="Text" style="margin-right:7px">Text</label>
+        <label style="font-size:14px;color:var(--soft);text-transform:none;letter-spacing:0;font-weight:400"><input type="checkbox" name="contact_pref" value="WhatsApp" style="margin-right:7px">WhatsApp</label>
+        <label style="font-size:14px;color:var(--soft);text-transform:none;letter-spacing:0;font-weight:400"><input type="checkbox" name="contact_pref" value="WeChat" style="margin-right:7px">WeChat</label>
+        <label style="font-size:14px;color:var(--soft);text-transform:none;letter-spacing:0;font-weight:400"><input type="checkbox" name="contact_pref" value="Email" style="margin-right:7px">Email</label>
+      </div></div>
     <div><label>Student's status this coming fall (2026–27)</label>
       <select name="status"><option value="">Select…</option><option>9th grade (Freshman)</option><option>10th grade (Sophomore)</option><option>11th grade (Junior)</option><option>12th grade (Senior)</option><option>College transfer applicant</option><option>Already graduated / gap year</option><option>Younger (8th or below)</option></select></div>
     <div><label>Student's high school</label><input name="high_school" list="hs" autocomplete="off">
@@ -292,6 +301,7 @@
     <div><label>Preferred language</label><select name="language"><option>English</option><option>中文 (Mandarin)</option><option>No preference</option></select><div class="hint">Mandarin language support available.</div></div>
     <div><label>How did you hear about us?</label><select name="referral"><option value="">Select…</option><option>GRACE (Roslyn Chinese Enrichment)</option><option>A friend or family member</option><option>WeChat group</option><option>A current or past client</option><option>My child's school</option><option>Online search</option><option>Other</option></select></div>
     <div class="full"><label>Anything you'd like us to know? (optional)</label><input name="note"></div>
+    <label class="full" style="font-size:14px;color:var(--soft);text-transform:none;letter-spacing:0;font-weight:400;display:block"><input type="checkbox" name="email_consent" value="yes" style="margin-right:8px">Yes — I'd like to receive emails from Quintessence: my Zoom link, and occasional admissions insights. You can unsubscribe anytime.</label>
     <button class="full" type="submit">Send</button>
   </form>
 </div></section>

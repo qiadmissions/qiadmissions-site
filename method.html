@@ -12,37 +12,48 @@
 <meta property="og:title" content="How Quintessence works">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%2315171c'/%3E%3Ctext x='50' y='68' font-family='Georgia,serif' font-size='42' letter-spacing='1' fill='%23f6f4ef' text-anchor='middle'%3EQI%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Mulish:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{ color-scheme:light; --bg:#f6f4ef; --paper:#fbfaf7; --ink:#191b1f; --soft:#5a5d63; --line:#e2ddd3;
     --accent:#6d1f2c; --navy:#0e2a3a; --gold:#9c8049;
-    --serif:'Cormorant Garamond',Georgia,serif; --sans:'Mulish',system-ui,-apple-system,Arial,sans-serif; }
+    --serif:'Cormorant Garamond',Georgia,'Times New Roman',serif; --sans:'Hanken Grotesk',system-ui,-apple-system,Arial,sans-serif; }
   *{ box-sizing:border-box; margin:0; padding:0; }
-  html{ scroll-behavior:smooth; } @view-transition{ navigation:auto; } body{ background:var(--bg); color:var(--ink); font-family:var(--sans); line-height:1.75; }
+  html{ scroll-padding-top:64px; background:var(--bg); }
+  @keyframes qpagein{ from{ opacity:0 } to{ opacity:1 } }
+  body{ background:var(--bg); color:var(--ink); font-family:var(--sans); line-height:1.75; animation:qpagein .32s ease both; }
   .serif{ font-family:var(--serif); font-weight:600; } a{ color:inherit; }
+  .topbar{ height:3px; background:var(--navy); }
   nav{ position:sticky; top:0; z-index:20; background:rgba(246,244,239,.93); -webkit-backdrop-filter:blur(10px); backdrop-filter:blur(10px); border-bottom:1px solid var(--line); }
   nav .wrap{ max-width:1040px; margin:0 auto; padding:0 28px; display:flex; align-items:center; justify-content:space-between; min-height:64px; gap:12px; }
   .navbrand{ display:flex; align-items:baseline; gap:10px; text-decoration:none; }
   .navqi{ font-family:var(--serif); font-weight:600; font-size:20px; letter-spacing:.08em; color:var(--accent); }
   .navmark{ font-family:var(--serif); font-weight:600; font-size:21px; letter-spacing:.02em; color:var(--ink); }
-  .navlink{ font-size:12px; letter-spacing:.16em; text-transform:uppercase; text-decoration:none; } .navlink:hover{ color:var(--accent); }
+  .navlinks{ display:flex; gap:22px; align-items:center; }
+  .navlink{ font-size:12px; letter-spacing:.16em; text-transform:uppercase; text-decoration:none; color:var(--ink); } .navlink:hover{ color:var(--accent); }
+  .navurl{ font-size:12px; letter-spacing:.06em; color:var(--accent); text-decoration:none; font-weight:700; }
 
-  .article{ max-width:680px; margin:0 auto; padding:80px 28px 40px; }
-  .eyebrow{ font-size:11.5px; letter-spacing:.32em; text-transform:uppercase; color:var(--gold); }
+  /* method hero — full-screen opening panel (Direction-B family: navy spine) */
+  .mhero{ min-height:calc(100vh - 64px); min-height:calc(100svh - 64px); display:flex; flex-direction:column; justify-content:center; padding:52px 0 0; border-bottom:1px solid var(--line); }
+  .mheromain{ max-width:680px; margin:0 auto; width:100%; padding:0 28px; }
+  .mheroinner{ border-left:2px solid var(--navy); padding-left:clamp(20px,3vw,38px); }
+  .article{ max-width:680px; margin:0 auto; padding:64px 28px 40px; }
+  .eyebrow{ font-size:11.5px; letter-spacing:.34em; text-transform:uppercase; color:var(--gold); }
   h1{ font-family:var(--serif); font-weight:600; font-size:clamp(38px,6vw,60px); line-height:1.06; margin:16px 0 0; }
-  .standfirst{ font-size:19px; line-height:1.6; color:var(--soft); margin-top:22px; }
+  .standfirst{ font-family:var(--sans); font-weight:400; font-size:18.5px; line-height:1.6; color:var(--soft); margin-top:20px; }
   .rule{ height:1px; background:var(--line); margin:44px 0; }
   h2{ font-family:var(--serif); font-weight:600; font-size:clamp(25px,3.6vw,33px); line-height:1.15; margin:52px 0 0; }
-  p{ font-size:18px; line-height:1.8; margin-top:18px; }
+  p{ font-family:var(--sans); font-weight:400; font-size:17.5px; line-height:1.75; margin-top:16px; }
   p.soft{ color:var(--soft); } strong{ font-weight:600; } em{ font-style:italic; }
 
   .elements{ margin-top:24px; }
   .el{ padding:24px 0; border-top:1px solid var(--line); display:flex; gap:18px; align-items:flex-start; } .el:last-child{ border-bottom:1px solid var(--line); }
-  .el .dot{ width:13px; height:13px; border-radius:50%; border:1px solid rgba(0,0,0,.14); flex:0 0 auto; margin-top:8px; }
-  .el .body .name{ font-family:var(--serif); font-weight:600; font-size:24px; display:inline; }
-  .el .body .ph{ font-size:11px; letter-spacing:.18em; text-transform:uppercase; color:var(--soft); margin-left:10px; }
-  .el .body p{ margin-top:8px; font-size:17px; }
-  .el .bul{ list-style:none; margin-top:10px; } .el .bul li{ position:relative; padding-left:18px; font-size:16.5px; color:var(--soft); margin-top:5px; line-height:1.6; }
+  .el .dot{ width:13px; height:13px; border-radius:50%; flex:0 0 auto; margin-top:7px; }
+  .el .body .ellabel{ font-family:var(--serif); font-size:20px; line-height:1.1; }
+  .el .body .elem{ font-style:italic; font-weight:600; }
+  .el .body .sep2{ color:var(--gold); margin:0 5px; }
+  .el .body .phase{ font-weight:500; color:var(--soft); }
+  .el .body p{ margin-top:8px; font-size:16.5px; line-height:1.65; }
+  .el .bul{ list-style:none; margin-top:10px; } .el .bul li{ position:relative; padding-left:18px; font-family:var(--sans); font-weight:400; font-size:15.5px; color:var(--soft); margin-top:6px; line-height:1.55; }
   .el .bul li:before{ content:"•"; position:absolute; left:2px; color:var(--gold); font-size:15px; }
 
   .aside{ background:var(--paper); border:1px solid var(--line); padding:26px 30px; margin:40px 0; }
@@ -51,27 +62,40 @@
   .endcta{ text-align:center; padding:46px 0 86px; }
   .btn{ font-size:12.5px; letter-spacing:.16em; text-transform:uppercase; text-decoration:none; padding:16px 30px; display:inline-block; background:var(--ink); color:var(--paper); } .btn:hover{ background:var(--accent); }
   .backlink{ display:block; margin-top:22px; font-size:12px; letter-spacing:.13em; text-transform:uppercase; color:var(--soft); text-decoration:none; }
+  /* contact coda — matches the landing */
+  .mcontact{ padding:86px 0 90px; border-top:1px solid var(--line); }
+  .mcontact .inner{ max-width:680px; margin:0 auto; padding:0 28px; }
+  .mcontacth{ font-family:var(--serif); font-weight:600; font-size:clamp(23px,2.8vw,32px); line-height:1.18; color:var(--ink); margin-top:14px; max-width:22ch; }
+  .mcontact .mailto{ display:inline-block; margin-top:22px; font-family:var(--serif); font-weight:600; font-size:clamp(22px,2.6vw,30px); color:var(--accent); text-decoration:none; border-bottom:1px solid var(--line); padding-bottom:4px; }
+  .mcontact .mailto:hover{ border-color:var(--accent); }
+  .mcontact .csub{ margin-top:22px; font-size:12.5px; letter-spacing:.13em; text-transform:uppercase; color:var(--soft); }
   footer{ padding:54px 0 70px; border-top:1px solid var(--line); }
   footer .wrap{ max-width:1040px; margin:0 auto; padding:0 28px; display:flex; justify-content:space-between; align-items:flex-end; gap:24px; flex-wrap:wrap; }
   .fmark{ font-family:var(--serif); font-weight:600; font-size:25px; } .fdesc{ font-size:12px; letter-spacing:.13em; text-transform:uppercase; color:var(--soft); margin-top:8px; }
   .fmeta{ font-size:13px; color:var(--soft); line-height:1.8; text-align:right; } .qimono{ font-family:var(--serif); font-weight:600; letter-spacing:.1em; border:1px solid var(--line); padding:3px 9px; color:var(--accent); }
-  @media(max-width:760px){ nav .wrap{ min-height:58px; } h1{ font-size:34px; } .article{ padding:60px 24px 30px; } footer .fmeta{ text-align:left; } }
+  @media(max-width:760px){ .hide-sm{ display:none; } nav .wrap{ min-height:56px; } .navqi{ font-size:17px; } .navmark{ font-size:18px; } .navlinks{ gap:18px; } h1{ font-size:34px; } .mheromain{ padding:0 24px; } .article{ padding:56px 24px 30px; } .mcontact .inner{ padding:0 24px; } footer .fmeta{ text-align:left; } }
 </style>
 </head>
 <body>
 
+<div class="topbar"></div>
 <nav><div class="wrap">
   <a class="navbrand" href="index.html"><span class="navqi">QI</span><span class="navmark">Quintessence</span></a>
-  <a class="navlink" href="index.html#rsvp">Sign up</a>
+  <div class="navlinks">
+    <a class="navurl hide-sm" href="https://qiadmissions.com">qiadmissions.com</a>
+    <a class="navlink" href="index.html#rsvp">Reserve</a>
+    <a class="navlink" href="#contact">Contact</a>
+  </div>
 </div></nav>
 
-<article class="article">
+<header class="mhero"><div class="mheromain"><div class="mheroinner">
   <div class="eyebrow">The Method</div>
   <h1 class="serif">How Quintessence works.</h1>
   <p class="standfirst">An account of the philosophy behind the firm, the way we work with a student from ninth grade
      through senior year, the essay process itself, and what makes the work excellent.</p>
-  <div class="rule"></div>
+</div></div></header>
 
+<article class="article">
   <h2>The name</h2>
   <p>Quintessence is the fifth essence — in the old cosmology, the pure element beyond earth, water, air, and fire,
      what remains when everything inessential is stripped away. The firm is named for that idea rather than for the
@@ -86,38 +110,38 @@
      name its second meaning — <em>quint-essence</em>, the five elements — and the same five shape a single essay, the
      whole application, and the years that lead up to it.</p>
   <div class="elements">
-    <div class="el"><span class="dot" style="background:#ffffff;border:1.5px solid #c2bdb1;box-shadow:0 0 6px rgba(0,0,0,.06)"></span><div class="body">
-      <span class="name" style="color:#444b54">Space</span><span class="ph">Framing · context</span>
-      <p>Before a word is written, we build the whole picture: the student, and the colleges they are aiming at. The richer this groundwork, the truer everything that follows.</p>
+    <div class="el"><span class="dot" style="background:radial-gradient(circle at 34% 30%,#ffffff,#eef1f4);border:1px solid #bcc4cc;box-shadow:0 0 7px 1px rgba(120,140,165,.45)"></span><div class="body">
+      <span class="ellabel"><i class="elem" style="color:#444b54">Space</i> <span class="sep2">·</span> <span class="phase">Framing</span></span>
+      <p>Before a word is written, we build the whole picture — the full context: the student, and the colleges they are aiming at. The richer this groundwork, the truer everything that follows.</p>
       <ul class="bul">
         <li>Clarify the goal, and what these colleges are really looking for.</li>
         <li>Gather and organize everything that makes the student who they are.</li>
         <li>Define the landscape, and begin building the right list of schools.</li>
       </ul></div></div>
-    <div class="el"><span class="dot" style="background:#b3322a"></span><div class="body">
-      <span class="name" style="color:#b3322a">Fire</span><span class="ph">Focusing</span>
+    <div class="el"><span class="dot" style="background:radial-gradient(circle at 34% 30%,#ef8871,#b3322a);box-shadow:0 0 8px 1px rgba(179,50,42,.5)"></span><div class="body">
+      <span class="ellabel"><i class="elem" style="color:#b3322a">Fire</i> <span class="sep2">·</span> <span class="phase">Focusing</span></span>
       <p>The most important thinking in the process. Everything we have gathered becomes one deliberate strategy, and everything after this point follows from it.</p>
       <ul class="bul">
         <li>Find the seed idea: the core of who this student is.</li>
         <li>Map what goes where, so each essay carries its own part of the story.</li>
         <li>Build an Essay Blueprint for every piece.</li>
       </ul></div></div>
-    <div class="el"><span class="dot" style="background:#2f6fb0"></span><div class="body">
-      <span class="name" style="color:#2f6fb0">Water</span><span class="ph">Flowing</span>
+    <div class="el"><span class="dot" style="background:radial-gradient(circle at 34% 30%,#7ab2e6,#2f6fb0);box-shadow:0 0 8px 1px rgba(47,111,176,.5)"></span><div class="body">
+      <span class="ellabel"><i class="elem" style="color:#2f6fb0">Water</i> <span class="sep2">·</span> <span class="phase">Flowing</span></span>
       <p>Now the student writes. With the Essay Blueprint in hand, the work is genuinely theirs, and this is where the truest, most surprising material tends to surface.</p>
       <ul class="bul">
         <li>The student uses the Essay Blueprint to write a draft, in their own voice.</li>
         <li>Slow by design: the depth shows up here, not in a rush.</li>
       </ul></div></div>
-    <div class="el"><span class="dot" style="background:#3f8a5b"></span><div class="body">
-      <span class="name" style="color:#3f8a5b">Air</span><span class="ph">Fixing</span>
+    <div class="el"><span class="dot" style="background:radial-gradient(circle at 34% 30%,#7cc79a,#3f8a5b);box-shadow:0 0 8px 1px rgba(63,138,91,.5)"></span><div class="body">
+      <span class="ellabel"><i class="elem" style="color:#3f8a5b">Air</i> <span class="sep2">·</span> <span class="phase">Fixing</span></span>
       <p>Revision at the level of substance and strategy, not commas. We make each piece stronger, and shape the separate essays into one coherent application.</p>
       <ul class="bul">
         <li>Strengthen the structure and the strategy.</li>
         <li>Make sure each piece does its job and the whole holds together.</li>
       </ul></div></div>
-    <div class="el"><span class="dot" style="background:#9c8049"></span><div class="body">
-      <span class="name" style="color:#9c8049">Earth</span><span class="ph">Finalizing</span>
+    <div class="el"><span class="dot" style="background:radial-gradient(circle at 34% 30%,#e2c78f,#9c8049);box-shadow:0 0 8px 1px rgba(156,128,73,.5)"></span><div class="body">
+      <span class="ellabel"><i class="elem" style="color:#9c8049">Earth</i> <span class="sep2">·</span> <span class="phase">Finalizing</span></span>
       <p>The last stretch, and a real one: the distance between a strong draft and something genuinely ready to send.</p>
       <ul class="bul">
         <li>Line-level polish, with every requirement met.</li>
@@ -159,9 +183,16 @@
   <a class="backlink" href="index.html">← Back to Quintessence</a>
 </div>
 
+<section class="mcontact" id="contact"><div class="inner">
+  <div class="eyebrow">Contact</div>
+  <div class="mcontacth serif">For enquiries, or to arrange a private conversation.</div>
+  <a class="mailto" href="mailto:qiadmissions@gmail.com?subject=Enquiry%20%C2%B7%20Quintessence">qiadmissions@gmail.com</a>
+  <div class="csub">By appointment</div>
+</div></section>
+
 <footer><div class="wrap">
   <div><div class="fmark serif">Quintessence</div><div class="fdesc">Private College Counseling &amp; Application Advisory</div></div>
-  <div class="fmeta"><span class="qimono">QI</span><br>qiadmissions.com<br>© 2026 Quintessence</div>
+  <div class="fmeta"><span class="qimono">QI</span><br>qiadmissions.com</div>
 </div></footer>
 
 </body>

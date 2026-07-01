@@ -16,26 +16,26 @@
 <meta name="twitter:image" content="https://qiadmissions.com/og.png">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%2315171c'/%3E%3Ctext x='50' y='68' font-family='Georgia,serif' font-size='42' letter-spacing='1' fill='%23f6f4ef' text-anchor='middle'%3EQI%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Mulish:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{ color-scheme:light; --bg:#f6f4ef; --paper:#fbfaf7; --ink:#191b1f; --soft:#5a5d63; --line:#e2ddd3;
     --accent:#6d1f2c; --navy:#0e2a3a; --gold:#9c8049;
-    --serif:'Cormorant Garamond',Georgia,'Times New Roman',serif; --sans:'Mulish',system-ui,-apple-system,Arial,sans-serif; }
+    --serif:'Cormorant Garamond',Georgia,'Times New Roman',serif; --sans:'Hanken Grotesk',system-ui,-apple-system,Arial,sans-serif; }
   *{ box-sizing:border-box; margin:0; padding:0; }
-  html{ scroll-behavior:smooth; scroll-padding-top:63px; }
-  @view-transition{ navigation:auto; } /* smooth cross-fade between pages */
-  body{ background:var(--bg); color:var(--ink); font-family:var(--sans); line-height:1.62; }
+  html{ scroll-padding-top:63px; background:var(--bg); }
+  @keyframes qpagein{ from{ opacity:0 } to{ opacity:1 } }
+  body{ background:var(--bg); color:var(--ink); font-family:var(--sans); line-height:1.62; animation:qpagein .32s ease both; }
   .serif{ font-family:var(--serif); font-weight:600; }
   .wrap{ max-width:1060px; margin:0 auto; padding:0 36px; }
   .col{ max-width:60ch; }
   .eyebrow{ font-size:11.5px; letter-spacing:.34em; text-transform:uppercase; color:var(--gold); }
   section{ min-height:100vh; min-height:100svh; padding:92px 0; border-bottom:1px solid var(--line); display:flex; flex-direction:column; justify-content:center; }
   .h2{ font-family:var(--serif); font-weight:600; font-size:clamp(30px,4.2vw,44px); line-height:1.12; margin-top:22px; }
-  p.body{ font-size:18px; color:var(--ink); line-height:1.78; margin-top:20px; }
+  p.body{ font-size:17.5px; color:var(--ink); line-height:1.72; margin-top:20px; }
   p.body.soft{ color:var(--soft); }
-  .btn{ font-size:12.5px; letter-spacing:.16em; text-transform:uppercase; text-decoration:none; padding:16px 28px; display:inline-block; }
+  .btn{ font-size:12.5px; letter-spacing:.16em; text-transform:uppercase; text-decoration:none; padding:16px 28px; display:inline-block; transition:background-color .25s ease, color .2s ease; }
   .btn-dark{ background:var(--ink); color:var(--paper); } .btn-dark:hover{ background:var(--accent); }
-  .tlink{ font-size:12.5px; letter-spacing:.13em; text-transform:uppercase; color:var(--ink); text-decoration:none; border-bottom:1px solid var(--line); padding-bottom:3px; }
+  .tlink{ font-size:12.5px; letter-spacing:.13em; text-transform:uppercase; color:var(--ink); text-decoration:none; border-bottom:1px solid var(--line); padding-bottom:3px; transition:color .2s ease, border-color .2s ease; }
   .tlink:hover{ border-color:var(--accent); color:var(--accent); }
 
   .topbar{ height:3px; background:var(--navy); }
@@ -45,23 +45,25 @@
   .navqi{ font-family:var(--serif); font-weight:600; font-size:20px; letter-spacing:.08em; color:var(--accent); }
   .navmark{ font-family:var(--serif); font-weight:600; font-size:21px; }
   .navlinks{ display:flex; gap:22px; align-items:center; }
-  .navlink{ font-size:12px; letter-spacing:.16em; text-transform:uppercase; color:var(--ink); text-decoration:none; }
+  .navlink{ font-size:12px; letter-spacing:.16em; text-transform:uppercase; color:var(--ink); text-decoration:none; transition:color .2s ease; }
   .navlink:hover{ color:var(--accent); }
+  .navcta{ font-size:12px; letter-spacing:.16em; text-transform:uppercase; color:var(--ink); text-decoration:none; border:1px solid var(--line); padding:8px 15px; transition:color .2s ease, background .2s ease, border-color .2s ease; }
+  .navcta:hover{ color:#fff; background:var(--accent); border-color:var(--accent); }
   .navurl{ font-size:12px; letter-spacing:.06em; color:var(--accent); text-decoration:none; font-weight:700; }
 
   /* HERO — fills the first screen, crest band pinned at its bottom */
-  .hero{ min-height:calc(100vh - 63px); min-height:calc(100svh - 63px); display:flex; flex-direction:column; justify-content:center; gap:clamp(40px,7vh,80px); padding:52px 0 0; border-bottom:1px solid var(--line); }
+  .hero{ min-height:calc(100vh - 63px); min-height:calc(100svh - 63px); display:flex; flex-direction:column; justify-content:center; gap:clamp(40px,7vh,80px); padding:52px 0 0; border-bottom:none; }
   .heromain{ text-align:left; max-width:1000px; margin:0 auto; width:100%; padding:0 36px; }
   .heroinner{ border-left:2px solid var(--navy); padding-left:clamp(22px,3.4vw,44px); }
   .brandhero{ font-family:var(--serif); font-weight:600; font-size:clamp(50px,8.4vw,104px); line-height:.98; margin-top:14px; }
   .defn{ font-family:var(--serif); font-style:italic; font-size:clamp(17px,2.3vw,23.5px); color:var(--soft); margin-top:18px; }
   .defn b{ font-style:normal; color:var(--ink); }
-  .herosub{ font-size:18.5px; color:var(--ink); line-height:1.72; max-width:54ch; margin:24px 0 0; }
+  .herosub{ font-size:17.5px; color:var(--ink); line-height:1.72; max-width:54ch; margin:24px 0 0; }
   .herosub b{ color:var(--accent); font-weight:600; }
   .herocta{ margin-top:36px; display:flex; gap:22px; align-items:center; justify-content:flex-start; flex-wrap:wrap; }
-  .heroproof{ background:var(--paper); border-top:1px solid var(--line); padding:28px 0 30px; text-align:left; }
+  .heroproof{ background:var(--ink); border-top:none; padding:24px 0 26px; text-align:left; }
   .heroproof .inner{ max-width:1000px; margin:0 auto; padding:0 36px; display:flex; align-items:center; gap:clamp(20px,4vw,54px); flex-wrap:wrap; }
-  .heroproof .eyebrow{ flex:0 0 auto; max-width:158px; line-height:1.55; letter-spacing:.28em; }
+  .heroproof .eyebrow{ flex:0 0 auto; max-width:150px; line-height:1.55; letter-spacing:.28em; color:var(--gold); }
 
   /* crest carousel */
   .marquee{ overflow:hidden; flex:1 1 320px; min-width:0; margin-top:0;
@@ -70,10 +72,10 @@
   .marquee .track{ display:inline-flex; align-items:center; gap:42px; white-space:nowrap; animation:scroll 95s linear infinite; }
   .marquee:hover .track{ animation-play-state:paused; }
   .unit{ display:inline-flex; align-items:center; gap:13px }
-  .crest{ height:38px; width:auto; max-width:126px; object-fit:contain; filter:grayscale(1) contrast(1.05) brightness(.4); opacity:.85 }
+  .crest{ height:38px; width:auto; max-width:126px; object-fit:contain; filter:grayscale(1) brightness(0) invert(1); opacity:.92 }
   .seal{ width:46px; height:46px; flex:0 0 auto }
-  .marquee .sch{ font-family:var(--serif); font-weight:600; font-size:clamp(18px,2vw,23px); color:var(--ink); letter-spacing:.005em }
-  .marquee .sep{ color:var(--navy); font-size:18px; opacity:.38 }
+  .marquee .sch{ font-family:var(--serif); font-weight:600; font-size:clamp(22px,2.8vw,32px); color:#fbfaf7; letter-spacing:.005em }
+  .marquee .sep{ color:var(--gold); font-size:19px; opacity:.6 }
   @keyframes scroll{ from{transform:translateX(0)} to{transform:translateX(-50%)} }
   @media(prefers-reduced-motion:reduce){ .marquee .track{ animation:none; flex-wrap:wrap; white-space:normal; justify-content:center } }
 
@@ -82,28 +84,31 @@
   .seminar .eyebrow{ color:#9fc3d6; }
   .seminar .title{ font-family:var(--serif); font-weight:600; color:#fff; font-size:clamp(30px,4.4vw,50px); line-height:1.08; margin-top:18px; }
   .seminar .title .sub{ display:block; color:#cddbe4; font-size:clamp(22px,3vw,34px); margin-top:6px; font-weight:500; }
-  .seminar .lede{ font-size:17.5px; color:#c4d2da; line-height:1.66; max-width:56ch; margin-top:22px; }
+  .seminar .lede{ font-size:17.5px; color:#c4d2da; line-height:1.72; max-width:56ch; margin-top:22px; }
+  .seminar .covhead{ margin-top:30px; font-size:11.5px; letter-spacing:.28em; text-transform:uppercase; color:#9fc3d6; font-weight:600; }
+  .seminar .covhead + .learn{ margin-top:14px; }
   .seminar .learn{ margin-top:30px; display:grid; gap:0; max-width:58ch; }
   .seminar .learn .it{ display:flex; gap:16px; font-size:15.5px; color:#e7eef2; line-height:1.45; padding:12px 0; border-top:1px solid rgba(255,255,255,.13); }
   .seminar .learn .it b{ font-family:var(--serif); color:#9fc3d6; font-weight:500; }
-  .seminar .facts{ margin-top:36px; font-family:var(--serif); font-size:clamp(19px,2.4vw,24px); color:#fff; }
+  .seminar .facts{ margin-top:36px; font-family:var(--serif); font-weight:600; font-size:clamp(21px,2.5vw,25px); letter-spacing:.005em; color:#fbfaf7; line-height:1.4; }
+  .seminar .facts .d{ color:var(--gold); margin:0 10px; font-weight:600; }
   .seminar .partner{ margin-top:20px; font-size:14px; color:#bccfd9; line-height:1.6; max-width:54ch; } .seminar .partner b{ color:#fff; }
   .seminar .row{ margin-top:32px; }
   .seminar .btn-light{ background:#fff; color:var(--navy); }
 
   /* Our Approach — promise + the QI Five-Phase System */
   .method{ padding:80px 0; }
-  .method .intro{ font-size:17px; color:var(--ink); line-height:1.6; max-width:60ch; margin-top:16px; }
+  .method .intro{ font-size:17.5px; color:var(--ink); line-height:1.72; max-width:60ch; margin-top:16px; }
   .method .intro b{ color:var(--accent); }
   .steps{ margin-top:26px; }
-  .step{ display:grid; grid-template-columns:205px 1fr; gap:26px; padding:13px 0; border-top:1px solid var(--line); align-items:baseline; }
+  .step{ display:grid; grid-template-columns:190px 1fr; gap:30px; padding:16px 0; border-top:1px solid var(--line); align-items:baseline; }
   .step:last-of-type{ border-bottom:1px solid var(--line); }
-  .step .dot{ display:inline-block; width:11px; height:11px; border-radius:50%; border:1px solid rgba(0,0,0,.14); margin-bottom:8px; }
-  .step .steplabel .dot{ display:inline-block; margin-bottom:9px; }
-  .step .lbl{ font-family:var(--serif); font-size:24px; line-height:1.12; }
+  .step .dot{ display:inline-block; width:13px; height:13px; border-radius:50%; }
+  .step .steplabel .dot{ display:inline-block; margin:0 12px 0 0; vertical-align:middle; position:relative; top:-1px; }
+  .step .lbl{ font-family:var(--serif); font-size:20px; line-height:1.1; white-space:nowrap; }
   .step .elem{ font-style:italic; font-weight:600; }
-  .step .sep2{ color:var(--gold); margin:0 3px; }
-  .step .phase{ font-style:normal; font-weight:600; color:var(--ink); }
+  .step .sep2{ color:var(--gold); margin:0 5px; font-style:normal; }
+  .step .phase{ font-style:normal; font-weight:500; color:var(--soft); }
   .step .txt{ font-size:15.5px; line-height:1.52; }
   .step .deliv{ display:block; margin-top:7px; font-family:var(--serif); font-weight:600; font-size:15px; color:var(--navy); }
   .seehow{ margin-top:26px; }
@@ -112,10 +117,10 @@
 
   .founder .team{ margin-top:34px; border-top:1px solid var(--line); padding-top:26px; }
   .founder .team h3{ font-family:var(--serif); font-weight:600; font-size:22px; }
-  .founder .team p{ font-size:16px; color:var(--soft); line-height:1.65; margin-top:10px; }
+  .founder .team p{ font-size:17.5px; color:var(--soft); line-height:1.72; margin-top:10px; }
 
   .rsvp{ background:var(--paper); }
-  .rsvp .lede{ font-size:17px; color:var(--soft); line-height:1.6; max-width:54ch; margin-top:16px; }
+  .rsvp .lede{ font-size:17.5px; color:var(--soft); line-height:1.72; max-width:54ch; margin-top:16px; }
   form{ display:grid; grid-template-columns:1fr 1fr; gap:18px; margin-top:38px; max-width:680px; }
   .full{ grid-column:1/-1; }
   label{ font-size:11px; letter-spacing:.13em; text-transform:uppercase; color:var(--soft); display:block; margin-bottom:8px; }
@@ -127,7 +132,7 @@
     background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='none' stroke='%235a5d63' stroke-width='1.5' d='M1 1l5 5 5-5'/%3E%3C/svg%3E");
     background-repeat:no-repeat; background-position:right 14px center; }
   input[type=checkbox]{ width:auto; height:auto; padding:0; border:0; vertical-align:middle; accent-color:var(--accent); }
-  button{ font-size:12.5px; letter-spacing:.16em; text-transform:uppercase; background:var(--ink); color:var(--paper); border:none; height:54px; cursor:pointer; font-family:var(--sans); }
+  button{ font-size:12.5px; letter-spacing:.16em; text-transform:uppercase; background:var(--ink); color:var(--paper); border:none; height:54px; cursor:pointer; font-family:var(--sans); transition:background-color .25s ease; }
   button:hover{ background:var(--accent); }
 
   /* contact — a quiet, restrained coda */
@@ -145,22 +150,107 @@
   .qimono{ font-family:var(--serif); font-weight:600; letter-spacing:.1em; border:1px solid var(--line); padding:3px 9px; color:var(--accent); }
 
   @media(max-width:760px){
-    section{ padding:56px 0; } .wrap{ padding:0 24px; } .heromain{ padding:60px 24px 20px; }
-    .step{ grid-template-columns:1fr; gap:8px; }
+    html{ scroll-padding-top:57px; }
+    section{ padding:56px 0; } .wrap{ padding:0 24px; }
+    /* top bar: trim to one tidy row */
+    .hide-sm{ display:none; }
+    nav .wrap{ min-height:56px; gap:10px 16px; }
+    .navqi{ font-size:17px; } .navmark{ font-size:18px; }
+    .navlinks{ gap:18px; } .navlink{ font-size:12px; letter-spacing:.1em; } .navcta{ font-size:12px; letter-spacing:.1em; padding:7px 13px; }
+    /* hero fills the first screen with the dark proof band pinned visibly at its base */
+    .hero{ justify-content:flex-start; gap:0; padding:0; }
+    .heromain{ flex:1 1 auto; display:flex; flex-direction:column; justify-content:center; padding:26px 24px; }
+    .brandhero{ font-size:clamp(42px,12.5vw,60px); margin-top:10px; }
+    .defn{ font-size:15px; margin-top:12px; }
+    .herosub{ font-size:16px; line-height:1.6; margin-top:16px; }
+    .herocta{ margin-top:22px; gap:14px; }
+    .heroproof{ flex:0 0 auto; padding:18px 0 20px; }
+    .heroproof .inner{ gap:8px 14px; padding:0 24px; }
+    .heroproof .eyebrow{ flex-basis:100%; max-width:none; }
+    .marquee .sch{ font-size:22px; }
+    .step{ grid-template-columns:1fr; gap:6px; }
+    .step .lbl{ white-space:normal; }
     form{ grid-template-columns:1fr; } .fmeta{ text-align:left; }
+  }
+
+  /* ===== The Method — seamless in-page reading panel ===== */
+  #site{ transition:transform .52s cubic-bezier(.4,0,.15,1); }
+  .method-open #site{ transform:translateX(-34px); }
+  #methodOverlay{ position:fixed; inset:0; z-index:200; background:var(--bg); overflow-y:auto; overflow-x:hidden; -webkit-overflow-scrolling:touch;
+    transform:translateX(100%); transition:transform .52s cubic-bezier(.4,0,.15,1); display:none; box-shadow:-34px 0 70px rgba(14,42,58,.18); }
+  .method-open #methodOverlay{ transform:translateX(0); }
+  #methodOverlay .mtop{ height:3px; background:var(--navy); }
+  #methodOverlay .mbar{ position:sticky; top:0; z-index:5; background:rgba(246,244,239,.92); -webkit-backdrop-filter:blur(10px); backdrop-filter:blur(10px); border-bottom:1px solid var(--line); }
+  #methodOverlay .mbar-in{ max-width:1040px; margin:0 auto; padding:0 28px; min-height:60px; display:flex; align-items:center; justify-content:space-between; gap:12px; }
+  #methodOverlay .mback{ display:inline-flex; align-items:center; gap:9px; background:none; border:0; cursor:pointer; color:var(--ink); padding:8px 0; }
+  #methodOverlay .mback .chev{ color:var(--accent); font-size:19px; transition:transform .25s ease; }
+  #methodOverlay .mback:hover .chev{ transform:translateX(-4px); }
+  #methodOverlay .mclose{ background:none; border:0; cursor:pointer; font-size:25px; line-height:1; color:var(--soft); width:42px; height:42px; border-radius:50%; display:flex; align-items:center; justify-content:center; }
+  #methodOverlay .mclose:hover{ color:var(--accent); background:rgba(0,0,0,.045); }
+  #methodOverlay .mbar-actions{ display:flex; align-items:center; gap:16px; }
+  #methodOverlay .mreserve{ font-size:11px; letter-spacing:.18em; text-transform:uppercase; color:var(--ink); text-decoration:none; border:1px solid var(--line); padding:9px 16px; transition:color .2s ease, border-color .2s ease, background-color .2s ease; }
+  #methodOverlay .mreserve:hover{ color:#fff; background:var(--accent); border-color:var(--accent); }
+  #methodOverlay .mhero{ min-height:calc(100svh - 66px); display:flex; flex-direction:column; justify-content:center; padding:52px 0 46px; border-bottom:1px solid var(--line); }
+  #methodOverlay .mheromain{ max-width:680px; margin:0 auto; width:100%; padding:0 28px; }
+  #methodOverlay .mheroinner{ border-left:2px solid var(--navy); padding-left:clamp(20px,3vw,38px); }
+  #methodOverlay .eyebrow{ font-size:11.5px; letter-spacing:.34em; text-transform:uppercase; color:var(--gold); }
+  #methodOverlay h1{ font-family:var(--serif); font-weight:600; font-size:clamp(38px,6vw,60px); line-height:1.06; margin:16px 0 0; }
+  #methodOverlay .standfirst{ font-family:var(--sans); font-weight:400; font-size:18.5px; line-height:1.6; color:var(--soft); margin-top:20px; }
+  #methodOverlay .article{ max-width:680px; margin:0 auto; padding:64px 28px 40px; }
+  #methodOverlay h2{ font-family:var(--serif); font-weight:600; font-size:clamp(25px,3.6vw,33px); line-height:1.15; margin:52px 0 0; }
+  #methodOverlay p{ font-family:var(--sans); font-weight:400; font-size:17.5px; line-height:1.75; margin-top:16px; }
+  #methodOverlay p.soft{ color:var(--soft); } #methodOverlay strong{ font-weight:600; } #methodOverlay em{ font-style:italic; }
+  #methodOverlay .elements{ margin-top:24px; }
+  #methodOverlay .el{ padding:24px 0; border-top:1px solid var(--line); display:flex; gap:18px; align-items:flex-start; }
+  #methodOverlay .el:last-child{ border-bottom:1px solid var(--line); }
+  #methodOverlay .el .dot{ width:13px; height:13px; border-radius:50%; flex:0 0 auto; margin-top:7px; }
+  #methodOverlay .el .body .ellabel{ font-family:var(--serif); font-size:20px; line-height:1.1; }
+  #methodOverlay .el .body .elem{ font-style:italic; font-weight:600; }
+  #methodOverlay .el .body .sep2{ color:var(--gold); margin:0 5px; }
+  #methodOverlay .el .body .phase{ font-weight:500; color:var(--soft); }
+  #methodOverlay .el .body p{ margin-top:8px; font-size:16.5px; line-height:1.65; }
+  #methodOverlay .el .bul{ list-style:none; margin-top:10px; }
+  #methodOverlay .el .bul li{ position:relative; padding-left:18px; font-family:var(--sans); font-weight:400; font-size:15.5px; color:var(--soft); margin-top:6px; line-height:1.55; }
+  #methodOverlay .el .bul li:before{ content:"\2022"; position:absolute; left:2px; color:var(--gold); font-size:15px; }
+  #methodOverlay .aside{ background:var(--paper); border:1px solid var(--line); padding:26px 30px; margin:40px 0; }
+  #methodOverlay .aside .k{ font-size:11px; letter-spacing:.26em; text-transform:uppercase; color:var(--gold); }
+  #methodOverlay .aside p{ font-family:var(--serif); font-size:21px; line-height:1.5; margin-top:10px; color:var(--navy); }
+  #methodOverlay .endcta{ text-align:center; padding:46px 0 96px; }
+  #methodOverlay .endcta .btn{ font-size:12.5px; letter-spacing:.16em; text-transform:uppercase; text-decoration:none; padding:16px 30px; display:inline-block; background:var(--ink); color:var(--paper); cursor:pointer; }
+  #methodOverlay .endcta .btn:hover{ background:var(--accent); }
+  #methodOverlay .backlink{ display:inline-block; margin-top:22px; font-size:12px; letter-spacing:.13em; text-transform:uppercase; color:var(--soft); text-decoration:none; cursor:pointer; }
+  #methodOverlay .backlink:hover{ color:var(--accent); }
+  /* staggered rise as the panel arrives */
+  @keyframes qelrise{ from{ opacity:0; transform:translateY(16px) } to{ opacity:1; transform:none } }
+  .method-open #methodOverlay .mheroinner{ animation:qelrise .6s cubic-bezier(.2,.7,.2,1) both; animation-delay:.08s; }
+  .method-open #methodOverlay .el{ animation:qelrise .55s cubic-bezier(.2,.7,.2,1) both; }
+  .method-open #methodOverlay .el:nth-child(1){ animation-delay:.10s; }
+  .method-open #methodOverlay .el:nth-child(2){ animation-delay:.17s; }
+  .method-open #methodOverlay .el:nth-child(3){ animation-delay:.24s; }
+  .method-open #methodOverlay .el:nth-child(4){ animation-delay:.31s; }
+  .method-open #methodOverlay .el:nth-child(5){ animation-delay:.38s; }
+  @media(prefers-reduced-motion:reduce){ #site, #methodOverlay, .method-open #methodOverlay .el, .method-open #methodOverlay .mheroinner{ transition:none !important; animation:none !important; } }
+  @media(max-width:760px){
+    .method-open #site{ transform:none; }
+    #methodOverlay .mbar-in{ padding:0 20px; min-height:54px; }
+    #methodOverlay .mback{ font-size:18px; }
+    #methodOverlay .mheromain{ padding:0 22px; } #methodOverlay h1{ font-size:34px; }
+    #methodOverlay .standfirst{ font-size:19px; }
+    #methodOverlay .article{ padding:48px 22px 30px; } #methodOverlay p{ font-size:19px; }
   }
 </style>
 </head>
 <body>
 
+<div id="site">
 <div class="topbar"></div>
 <nav><div class="wrap">
   <div class="navbrand"><span class="navqi">QI</span><span class="navmark">Quintessence</span></div>
   <div class="navlinks">
-    <a class="navurl" href="https://qiadmissions.com">qiadmissions.com</a>
-    <a class="navlink" href="method.html">The Method</a>
-    <a class="navlink" href="#rsvp">Reserve</a>
-    <a class="navlink" href="#contact">Contact</a>
+    <a class="navurl hide-sm" href="https://qiadmissions.com">qiadmissions.com</a>
+    <a class="navlink" href="method.html" data-method>The Method</a>
+    <a class="navcta" href="#rsvp">Reserve</a>
+    <a class="navlink hide-sm" href="#contact">Contact</a>
   </div>
 </div></nav>
 
@@ -175,7 +265,7 @@
        <b>results by design.</b> We help your child become their truest self and earn a place at the college of their choice.</p>
     <div class="herocta">
       <a class="btn btn-dark" href="#seminar">Sign up — complimentary seminar · July 12</a>
-      <a class="tlink" href="method.html">See our method →</a>
+      <a class="tlink" href="method.html" data-method>See our method →</a>
     </div>
     </div>
   </div>
@@ -189,10 +279,11 @@
         <span class="unit"><img class="crest" src="assets/crests/columbia.png" alt="" onerror="this.style.display='none'"><span class="sch">Columbia</span></span><span class="sep">·</span>
         <span class="unit"><img class="crest" src="assets/crests/penn.png" alt="" onerror="this.style.display='none'"><span class="sch">UPenn</span></span><span class="sep">·</span>
         <span class="unit"><img class="crest" src="assets/crests/cornell.png" alt="" onerror="this.style.display='none'"><span class="sch">Cornell</span></span><span class="sep">·</span>
-        <span class="unit"><img class="crest" src="assets/crests/duke.png" alt="" onerror="this.style.display='none'"><span class="sch">Duke</span></span><span class="sep">·</span>
+        <span class="unit"><img class="crest" src="assets/crests/vanderbilt.png" alt="" onerror="this.style.display='none'"><span class="sch">Vanderbilt</span></span><span class="sep">·</span>
         <span class="unit"><img class="crest" src="assets/crests/berkeley.png" alt="" onerror="this.style.display='none'"><span class="sch">Berkeley</span></span><span class="sep">·</span>
         <span class="unit"><img class="crest" src="assets/crests/caltech.png" alt="" onerror="this.style.display='none'"><span class="sch">Caltech</span></span><span class="sep">·</span>
         <span class="unit"><img class="crest" src="assets/crests/northwestern.png" alt="" onerror="this.style.display='none'"><span class="sch">Northwestern</span></span><span class="sep">·</span>
+        <span class="unit"><img class="crest" src="assets/crests/unc.png" alt="" onerror="this.style.display='none'"><span class="sch">UNC</span></span><span class="sep">·</span>
         <span class="unit"><img class="crest" src="assets/crests/hopkins.png" alt="" onerror="this.style.display='none'"><span class="sch">Johns Hopkins</span></span><span class="sep">·</span>
         <span class="unit"><img class="crest" src="assets/crests/bu.png" alt="" onerror="this.style.display='none'"><span class="sch">Boston University</span></span><span class="sep">·</span>
         <span class="unit"><img class="crest" src="assets/crests/babson.png" alt="" onerror="this.style.display='none'"><span class="sch">Babson · Full Scholarship</span></span><span class="sep">·</span>
@@ -206,16 +297,15 @@
 <section class="seminar" id="seminar"><div class="wrap col">
   <div class="eyebrow">A Complimentary Evening Seminar · Parents &amp; Students, Grades 9–12</div>
   <div class="title serif">What Colleges Really Want<span class="sub">A Strategic System for Standout Applicants</span></div>
-  <p class="lede">Most families navigate the admissions process without ever seeing how it truly works. One evening on the
-     forces that shape these decisions — and what it takes to stand out.</p>
+  <div class="covhead">What the evening covers</div>
   <div class="learn">
     <div class="it"><b>01</b> What Colleges Are Really Looking For</div>
     <div class="it"><b>02</b> The Incentives That Drive Admissions</div>
     <div class="it"><b>03</b> The Rare Unity of Strategy and Authenticity</div>
     <div class="it"><b>04</b> The X-Factor in a Standout Applicant</div>
-    <div class="it"><b>05</b> The Quintessence Approach — the QI Five-Phase System &amp; the Art of the Essay</div>
+    <div class="it"><b>05</b> The Quintessence Approach — the QI Five-Phase System &amp; Art of the Essay</div>
   </div>
-  <div class="facts">Sunday, July 12 &nbsp;·&nbsp; 8:00 PM EDT &nbsp;·&nbsp; Live on Zoom &nbsp;·&nbsp; Complimentary</div>
+  <div class="facts">Sunday, July 12 <span class="d">·</span> 8:00 PM EDT <span class="d">·</span> Live on Zoom <span class="d">·</span> Complimentary</div>
   <div class="row"><a class="btn btn-light" href="#rsvp">Reserve your place →</a></div>
 </div></section>
 
@@ -228,19 +318,19 @@
      admissions process with something intentional and strategic: <b>results by design.</b></p>
   <div class="steps">
     <div class="step">
-      <div class="steplabel"><span class="dot" style="background:#ffffff;border:1.5px solid #c2bdb1;box-shadow:0 0 6px rgba(0,0,0,.06)"></span><span class="lbl"><i class="elem" style="color:#444b54">Space</i> <span class="sep2">·</span> <span class="phase">Framing</span></span></div>
+      <div class="steplabel"><span class="dot" style="background:radial-gradient(circle at 34% 30%,#ffffff,#eef1f4);border:1px solid #bcc4cc;box-shadow:0 0 6px 1px rgba(120,140,165,.45)"></span><span class="lbl"><i class="elem" style="color:#444b54">Space</i> <span class="sep2">·</span> <span class="phase">Framing</span></span></div>
       <div class="txt">We get clear on what colleges are really looking for, and everything your child has to work with. This is where the school list takes shape.<span class="deliv">Applicant DNA Profile · the school list · the strategic plan</span></div></div>
     <div class="step">
-      <div class="steplabel"><span class="dot" style="background:#b3322a"></span><span class="lbl"><i class="elem" style="color:#b3322a">Fire</i> <span class="sep2">·</span> <span class="phase">Focusing</span></span></div>
+      <div class="steplabel"><span class="dot" style="background:radial-gradient(circle at 34% 30%,#ef8871,#b3322a);box-shadow:0 0 7px 1px rgba(179,50,42,.5)"></span><span class="lbl"><i class="elem" style="color:#b3322a">Fire</i> <span class="sep2">·</span> <span class="phase">Focusing</span></span></div>
       <div class="txt">We find the core — the one true through-line that ties a whole life into a single, clear story — and turn it into a plan for every essay.<span class="deliv">A defining narrative · an Essay Blueprint for each essay</span></div></div>
     <div class="step">
-      <div class="steplabel"><span class="dot" style="background:#2f6fb0"></span><span class="lbl"><i class="elem" style="color:#2f6fb0">Water</i> <span class="sep2">·</span> <span class="phase">Flowing</span></span></div>
+      <div class="steplabel"><span class="dot" style="background:radial-gradient(circle at 34% 30%,#7ab2e6,#2f6fb0);box-shadow:0 0 7px 1px rgba(47,111,176,.5)"></span><span class="lbl"><i class="elem" style="color:#2f6fb0">Water</i> <span class="sep2">·</span> <span class="phase">Flowing</span></span></div>
       <div class="txt">Your child writes the essays, in their own voice, working from the blueprint. We guide; they write.<span class="deliv">First drafts, entirely their own</span></div></div>
     <div class="step">
-      <div class="steplabel"><span class="dot" style="background:#3f8a5b"></span><span class="lbl"><i class="elem" style="color:#3f8a5b">Air</i> <span class="sep2">·</span> <span class="phase">Fixing</span></span></div>
+      <div class="steplabel"><span class="dot" style="background:radial-gradient(circle at 34% 30%,#7cc79a,#3f8a5b);box-shadow:0 0 7px 1px rgba(63,138,91,.5)"></span><span class="lbl"><i class="elem" style="color:#3f8a5b">Air</i> <span class="sep2">·</span> <span class="phase">Fixing</span></span></div>
       <div class="txt">We strengthen the structure — does each essay do its job, sound like your child, and hold together as one application?<span class="deliv">Revised drafts</span></div></div>
     <div class="step">
-      <div class="steplabel"><span class="dot" style="background:#9c8049"></span><span class="lbl"><i class="elem" style="color:#9c8049">Earth</i> <span class="sep2">·</span> <span class="phase">Finalizing</span></span></div>
+      <div class="steplabel"><span class="dot" style="background:radial-gradient(circle at 34% 30%,#e2c78f,#9c8049);box-shadow:0 0 7px 1px rgba(156,128,73,.5)"></span><span class="lbl"><i class="elem" style="color:#9c8049">Earth</i> <span class="sep2">·</span> <span class="phase">Finalizing</span></span></div>
       <div class="txt">The last pass: polish, every requirement met, ready to submit. We call it finalizing, not finishing — the work isn't done until it's truly ready.<span class="deliv">The final application, ready to submit</span></div></div>
   </div>
   <div class="differ">
@@ -249,7 +339,7 @@
     <span><b>Excellence is the difference.</b></span>
     <span><b>One student at a time.</b></span>
   </div>
-  <div class="seehow"><a class="tlink" href="method.html">See the full method →</a></div>
+  <div class="seehow"><a class="tlink" href="method.html" data-method>See the full method →</a></div>
 </div></section>
 
 <!-- FOUNDER + TEAM (concise; full bios → About page) -->
@@ -273,7 +363,7 @@
 <section class="rsvp" id="rsvp"><div class="wrap">
   <div class="eyebrow">Reserve your place</div>
   <div class="h2 serif">Save your seat at the seminar.</div>
-  <p class="lede">Sunday, July 12 · 8 PM EDT, on Zoom. Tell us where to send your link. <span style="white-space:nowrap">🔒 Your family's details stay strictly private</span> — used only to reach you, never shared.</p>
+  <p class="lede">Sunday, July 12 · 8 PM EDT, on Zoom. Tell us where to send your link.</p>
   <!-- RSVP capture via Web3Forms — verified working (delivers to qiadmissions@gmail.com). -->
   <form action="https://api.web3forms.com/submit" method="POST">
     <input type="hidden" name="access_key" value="74d99fe3-e078-4796-8c93-920b2c6b221d">
@@ -324,8 +414,116 @@
 
 <footer><div class="wrap">
   <div><div class="fmark serif">Quintessence</div><div class="fdesc">Private College Counseling &amp; Application Advisory</div></div>
-  <div class="fmeta"><span class="qimono">QI</span><br>qiadmissions.com<br>© 2026 Quintessence</div>
+  <div class="fmeta"><span class="qimono">QI</span><br>qiadmissions.com</div>
 </div></footer>
+</div><!-- /#site -->
+
+<!-- The Method — folded in as a seamless reading panel (content byte-identical to method.html, which remains as a no-JS fallback) -->
+<div id="methodOverlay" role="dialog" aria-label="The Method">
+  <div class="mtop"></div>
+  <div class="mbar"><div class="mbar-in">
+    <button class="mback" type="button" data-close><span class="chev">←</span><span class="navqi">QI</span><span class="navmark">Quintessence</span></button>
+    <div class="mbar-actions">
+      <a class="mreserve" href="#rsvp" data-goto="#rsvp">Reserve</a>
+      <button class="mclose" type="button" data-close aria-label="Close">×</button>
+    </div>
+  </div></div>
+
+  <header class="mhero"><div class="mheromain"><div class="mheroinner">
+    <div class="eyebrow">The Method</div>
+    <h1 class="serif">How Quintessence works.</h1>
+    <p class="standfirst">An account of the philosophy behind the firm, the way we work with a student from ninth grade
+       through senior year, the essay process itself, and what makes the work excellent.</p>
+  </div></div></header>
+
+  <article class="article">
+    <h2>The name</h2>
+    <p>Quintessence is the fifth essence — in the old cosmology, the pure element beyond earth, water, air, and fire,
+       what remains when everything inessential is stripped away. The firm is named for that idea rather than for the
+       service, because the work begins there: helping a student discover, cultivate, and communicate the deepest essence
+       of who they are. The application is where that becomes visible to a college. It is the expression of the
+       philosophy, not the philosophy itself.</p>
+    <p>We treat an application as an art rather than a machine — a composition built from the real material of one
+       student's life, not a form filled against a template.</p>
+
+    <h2>The Five Elements</h2>
+    <p class="soft">The method moves through five phases, in order, from the most open to the most finished. They give the
+       name its second meaning — <em>quint-essence</em>, the five elements — and the same five shape a single essay, the
+       whole application, and the years that lead up to it.</p>
+    <div class="elements">
+      <div class="el"><span class="dot" style="background:radial-gradient(circle at 34% 30%,#ffffff,#eef1f4);border:1px solid #bcc4cc;box-shadow:0 0 7px 1px rgba(120,140,165,.45)"></span><div class="body">
+        <span class="ellabel"><i class="elem" style="color:#444b54">Space</i> <span class="sep2">·</span> <span class="phase">Framing</span></span>
+        <p>Before a word is written, we build the whole picture — the full context: the student, and the colleges they are aiming at. The richer this groundwork, the truer everything that follows.</p>
+        <ul class="bul">
+          <li>Clarify the goal, and what these colleges are really looking for.</li>
+          <li>Gather and organize everything that makes the student who they are.</li>
+          <li>Define the landscape, and begin building the right list of schools.</li>
+        </ul></div></div>
+      <div class="el"><span class="dot" style="background:radial-gradient(circle at 34% 30%,#ef8871,#b3322a);box-shadow:0 0 8px 1px rgba(179,50,42,.5)"></span><div class="body">
+        <span class="ellabel"><i class="elem" style="color:#b3322a">Fire</i> <span class="sep2">·</span> <span class="phase">Focusing</span></span>
+        <p>The most important thinking in the process. Everything we have gathered becomes one deliberate strategy, and everything after this point follows from it.</p>
+        <ul class="bul">
+          <li>Find the seed idea: the core of who this student is.</li>
+          <li>Map what goes where, so each essay carries its own part of the story.</li>
+          <li>Build an Essay Blueprint for every piece.</li>
+        </ul></div></div>
+      <div class="el"><span class="dot" style="background:radial-gradient(circle at 34% 30%,#7ab2e6,#2f6fb0);box-shadow:0 0 8px 1px rgba(47,111,176,.5)"></span><div class="body">
+        <span class="ellabel"><i class="elem" style="color:#2f6fb0">Water</i> <span class="sep2">·</span> <span class="phase">Flowing</span></span>
+        <p>Now the student writes. With the Essay Blueprint in hand, the work is genuinely theirs, and this is where the truest, most surprising material tends to surface.</p>
+        <ul class="bul">
+          <li>The student uses the Essay Blueprint to write a draft, in their own voice.</li>
+          <li>Slow by design: the depth shows up here, not in a rush.</li>
+        </ul></div></div>
+      <div class="el"><span class="dot" style="background:radial-gradient(circle at 34% 30%,#7cc79a,#3f8a5b);box-shadow:0 0 8px 1px rgba(63,138,91,.5)"></span><div class="body">
+        <span class="ellabel"><i class="elem" style="color:#3f8a5b">Air</i> <span class="sep2">·</span> <span class="phase">Fixing</span></span>
+        <p>Revision at the level of substance and strategy, not commas. We make each piece stronger, and shape the separate essays into one coherent application.</p>
+        <ul class="bul">
+          <li>Strengthen the structure and the strategy.</li>
+          <li>Make sure each piece does its job and the whole holds together.</li>
+        </ul></div></div>
+      <div class="el"><span class="dot" style="background:radial-gradient(circle at 34% 30%,#e2c78f,#9c8049);box-shadow:0 0 8px 1px rgba(156,128,73,.5)"></span><div class="body">
+        <span class="ellabel"><i class="elem" style="color:#9c8049">Earth</i> <span class="sep2">·</span> <span class="phase">Finalizing</span></span>
+        <p>The last stretch, and a real one: the distance between a strong draft and something genuinely ready to send.</p>
+        <ul class="bul">
+          <li>Line-level polish, with every requirement met.</li>
+          <li>Finalizing, not finishing: a strong draft is not yet a finished one.</li>
+        </ul></div></div>
+    </div>
+
+    <h2>From ninth grade to senior year</h2>
+    <p>We work with families across the whole arc, not only in the final year. For younger students the work is
+       counseling — building toward a strong application over several years: the activities and direction, the developing
+       sense of who the student is becoming, and in time the right list of schools. For seniors it is the application
+       itself, the full method run from first strategy to final submission across the application season.</p>
+    <p>Either way it is one advisory built around a single student — a complete relationship, not a service brought in
+       for a single task.</p>
+
+    <h2>The essay process</h2>
+    <p>The essays are where most of the visible work happens. Each one starts with a plan: what the essay is for, which
+       part of the student's story it carries, and how it fits alongside the rest. From there the student writes, and we
+       guide the structure and the strategy, draft after draft, until each essay does its job and sounds unmistakably
+       like them.</p>
+    <p>The student is the author throughout. We guide; they write — and that is as much a matter of quality as of
+       principle, because the strongest application is the one that is genuinely theirs.</p>
+
+    <h2>Our specialty</h2>
+    <p>What we do best, above everything, is narrative — finding the true story in a life and building an application
+       around it. That is a writer's craft, and it is the center of the firm. We hold every application to one standard:
+       that it be the best version of itself, particular to the single student it belongs to. Excellence, not pedigree,
+       is the difference.</p>
+    <p>Adam Obedian, who founded Quintessence, studied Philosophy and Drama at Columbia. Most families begin with
+       <strong>Art of the Essay</strong>, the course where a student first learns the method.</p>
+
+    <div class="aside"><div class="k">What it comes to</div>
+      <p>A student who finishes the process understanding themselves more clearly than when they began — and an
+         application that is, in every line, genuinely their own.</p></div>
+  </article>
+
+  <div class="endcta">
+    <a class="btn" href="#rsvp" data-goto="#rsvp">Sign up for the complimentary seminar →</a>
+    <a class="backlink" href="#" data-close>← Back to Quintessence</a>
+  </div>
+</div>
 
 <script>
   /* auto-check the email-consent box once the visitor starts filling the form (they can still uncheck) */
@@ -333,6 +531,32 @@
     f.addEventListener('input', function(){ if(!done && c){ c.checked=true; done=true; } }); })();
   /* duplicate the crest track once for a seamless loop */
   (function(){ var t=document.getElementById('crestTrack'); if(t){ t.innerHTML += t.innerHTML; } })();
+  /* gentle, non-dizzying smooth scroll for visible in-page links (Reserve, seminar, contact) */
+  (function(){
+    var reduce = matchMedia('(prefers-reduced-motion:reduce)').matches;
+    function ease(t){ return t<.5 ? 4*t*t*t : 1-Math.pow(-2*t+2,3)/2; }
+    function smoothTo(y,dur){ var s=window.pageYOffset, d=y-s, st=null; if(Math.abs(d)<2) return; dur=dur||720; requestAnimationFrame(function f(ts){ if(st===null)st=ts; var p=Math.min((ts-st)/dur,1); window.scrollTo(0, s+d*ease(p)); if(p<1) requestAnimationFrame(f); }); }
+    document.querySelectorAll('#site a[href^="#"]').forEach(function(a){
+      var h=a.getAttribute('href'); if(!h || h.length<2) return;
+      if(a.hasAttribute('data-method')||a.hasAttribute('data-goto')||a.hasAttribute('data-close')) return;
+      a.addEventListener('click',function(e){ var el=document.getElementById(h.slice(1)); if(!el) return; e.preventDefault(); var navH=document.querySelector('nav').getBoundingClientRect().height; var y=el.getBoundingClientRect().top+window.pageYOffset-navH; if(reduce){ window.scrollTo(0,y); } else { smoothTo(y,720); } });
+    });
+  })();
+  /* ===== The Method — seamless in-page reading panel ===== */
+  (function(){
+    var overlay=document.getElementById('methodOverlay'); if(!overlay) return;
+    var root=document.documentElement, isOpen=false;
+    function hideNow(){ if(!isOpen){ overlay.style.display='none'; } }
+    function onClosedEnd(e){ if(e.target!==overlay || e.propertyName!=='transform') return; overlay.removeEventListener('transitionend',onClosedEnd); hideNow(); }
+    function openMethod(){ if(isOpen) return; isOpen=true; overlay.removeEventListener('transitionend',onClosedEnd); overlay.style.display='block'; overlay.scrollTop=0; document.body.style.overflow='hidden'; requestAnimationFrame(function(){ requestAnimationFrame(function(){ root.classList.add('method-open'); }); }); try{ history.pushState({qm:1},''); }catch(e){} var b=overlay.querySelector('[data-close]'); if(b){ try{ b.focus({preventScroll:true}); }catch(e){} } }
+    function closeMethod(fromPop){ if(!isOpen) return; isOpen=false; root.classList.remove('method-open'); document.body.style.overflow=''; overlay.addEventListener('transitionend',onClosedEnd); setTimeout(hideNow,640); if(!fromPop && history.state && history.state.qm){ try{ history.back(); }catch(e){} } }
+    function goTo(sel){ var el=document.querySelector(sel); closeMethod(); if(el){ requestAnimationFrame(function(){ requestAnimationFrame(function(){ var navH=document.querySelector('nav').getBoundingClientRect().height; window.scrollTo(0, el.getBoundingClientRect().top + window.pageYOffset - navH); }); }); } }
+    document.querySelectorAll('[data-method]').forEach(function(a){ a.addEventListener('click',function(e){ e.preventDefault(); openMethod(); }); });
+    overlay.querySelectorAll('[data-close]').forEach(function(a){ a.addEventListener('click',function(e){ e.preventDefault(); closeMethod(); }); });
+    overlay.querySelectorAll('[data-goto]').forEach(function(a){ a.addEventListener('click',function(e){ e.preventDefault(); goTo(a.getAttribute('data-goto')); }); });
+    window.addEventListener('popstate',function(){ if(isOpen){ closeMethod(true); } });
+    document.addEventListener('keydown',function(e){ if((e.key==='Escape'||e.key==='Esc') && isOpen){ closeMethod(); } });
+  })();
 </script>
 </body>
 </html>

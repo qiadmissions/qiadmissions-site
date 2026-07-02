@@ -157,8 +157,10 @@
   .contact .mailto:hover{ border-color:var(--accent); }
   .contact .contactsub{ margin-top:22px; font-size:12.5px; letter-spacing:.13em; text-transform:uppercase; color:var(--soft); }
 
-  footer{ padding:48px 0 64px; border-bottom:none; }
-  footer .wrap{ display:flex; justify-content:space-between; align-items:flex-end; gap:24px; flex-wrap:wrap; }
+  footer{ padding:56px 0 64px; border-bottom:none; }
+  footer .wrap{ display:flex; justify-content:space-between; align-items:flex-start; gap:30px 48px; flex-wrap:wrap; }
+  .fmeta .furl{ color:var(--soft); text-decoration:none; letter-spacing:.02em; transition:color .2s ease; }
+  .fmeta .furl:hover{ color:var(--accent); }
   .fmark{ font-family:var(--serif); font-weight:600; font-size:24px; }
   .fdesc{ font-size:12px; letter-spacing:.13em; text-transform:uppercase; color:var(--soft); margin-top:8px; }
   .fmeta{ font-size:13px; color:var(--soft); line-height:1.8; text-align:right; }
@@ -198,7 +200,7 @@
     .marquee .sch{ font-size:22px; }
     .step{ grid-template-columns:1fr; gap:6px; }
     .step .lbl{ white-space:normal; }
-    form{ grid-template-columns:1fr; } .fmeta{ text-align:left; }
+    form{ grid-template-columns:1fr; } footer .wrap{ flex-direction:column; align-items:flex-start; gap:24px; } .fmeta{ text-align:left; }
   }
 
   /* ===== The Method — seamless in-page reading panel ===== */
@@ -299,7 +301,7 @@
   <div class="navlinks" id="navlinks">
     <a class="navurl hide-sm" href="https://qiadmissions.com">qiadmissions.com</a>
     <a class="navcta" href="/method.html" data-method>The Method</a>
-    <a class="navcta" href="#rsvp">Reserve</a>
+    <a class="navcta" href="#seminar">Reserve</a>
   </div>
 </div></nav>
 
@@ -341,24 +343,6 @@
     </div>
   </div>
 </header>
-
-<!-- SEMINAR — the hook -->
-<section class="seminar" id="seminar"><div class="wrap">
-  <div class="col">
-  <div class="eyebrow">A Complimentary Evening Seminar<br>Parents &amp; Students · Grades 9–12, &amp; Transfer Applicants</div>
-  <div class="title serif">What Colleges Really Want<span class="sub">A Strategic System for Standout Applicants</span></div>
-  <div class="covhead">What the evening covers</div>
-  <div class="learn">
-    <div class="it"><b>01</b> What Colleges Are Really Looking For</div>
-    <div class="it"><b>02</b> The Incentives That Drive Admissions</div>
-    <div class="it"><b>03</b> The Rare Unity of Strategy and Authenticity</div>
-    <div class="it"><b>04</b> The X-Factor in a Standout Applicant</div>
-    <div class="it"><b>05</b> <span class="txt"><span class="u">The Quintessence Approach:</span> <span class="u">the QI Five-Phase System</span> <span class="u">&amp; Art of the Essay</span></span></div>
-  </div>
-  </div>
-  <div class="facts"><span class="fp">Sunday, July 12</span> <span class="d">·</span> <span class="fp">8:00 PM EDT</span> <span class="d">·</span> <span class="fp">Live on Zoom</span> <span class="d">·</span> <span class="fp">Complimentary</span></div>
-  <div class="row"><a class="btn btn-light" href="#rsvp">Reserve your place →</a></div>
-</div></section>
 
 <!-- OUR APPROACH — the promise + the QI Five-Phase System -->
 <section class="method" id="method"><div class="wrap">
@@ -410,9 +394,27 @@
   </div>
 </div></div></section>
 
+<!-- SEMINAR — the hook -->
+<section class="seminar" id="seminar"><div class="wrap">
+  <div class="col">
+  <div class="eyebrow">A Complimentary Evening Seminar<br>Parents &amp; Students · Grades 9–12, &amp; Transfer Applicants</div>
+  <div class="title serif">What Colleges Really Want<span class="sub">A Strategic System for Standout Applicants</span></div>
+  <div class="covhead">What the evening covers</div>
+  <div class="learn">
+    <div class="it"><b>01</b> What Colleges Are Really Looking For</div>
+    <div class="it"><b>02</b> The Incentives That Drive Admissions</div>
+    <div class="it"><b>03</b> The Rare Unity of Strategy and Authenticity</div>
+    <div class="it"><b>04</b> The X-Factor in a Standout Applicant</div>
+    <div class="it"><b>05</b> <span class="txt"><span class="u">The Quintessence Approach:</span> <span class="u">the QI Five-Phase System</span> <span class="u">&amp; Art of the Essay</span></span></div>
+  </div>
+  </div>
+  <div class="facts"><span class="fp">Sunday, July 12</span> <span class="d">·</span> <span class="fp">8:00 PM EDT</span> <span class="d">·</span> <span class="fp">Live on Zoom</span> <span class="d">·</span> <span class="fp">Complimentary</span></div>
+  <div class="row"><a class="btn btn-light" href="#rsvp">Reserve your place →</a></div>
+</div></section>
+
 <!-- RSVP form -->
 <section class="rsvp" id="rsvp"><div class="wrap">
-  <div class="eyebrow">Reserve your place</div>
+  <div class="eyebrow">RSVP for your Zoom link</div>
   <div class="h2 serif">Save your seat at the seminar.</div>
   <p class="lede">Sunday, July 12 · 8 PM EDT, on Zoom. Tell us where to send your link.</p>
   <!-- RSVP capture via Web3Forms — verified working (delivers to qiadmissions@gmail.com). -->
@@ -450,7 +452,7 @@
     <div><label>Preferred language</label><select name="language"><option>English</option><option>中文 (Mandarin)</option><option>No preference</option></select></div>
     <div><label>How did you hear about us?</label><select name="referral"><option value="">Select…</option><option>A friend or family member</option><option>My child's school</option><option>A current or past client</option><option>WeChat group</option><option>GRACE (Roslyn Chinese Enrichment)</option><option>Online search</option><option>Other</option></select></div>
     <div class="full"><label>Anything you'd like us to know? (optional)</label><input name="note"></div>
-    <label class="full" style="font-size:14px;color:var(--soft);text-transform:none;letter-spacing:0;font-weight:400;display:block"><input type="checkbox" id="consent" name="email_consent" value="yes" style="width:auto;height:auto;margin-right:8px">Yes — I'd like to receive emails from Quintessence: my Zoom link, and occasional admissions insights. You can unsubscribe anytime.</label>
+    <label class="full" style="font-size:14px;color:var(--soft);text-transform:none;letter-spacing:0;font-weight:400;display:block"><input type="checkbox" id="consent" name="email_consent" value="yes" required style="width:auto;height:auto;margin-right:8px">Yes — I'd like to receive emails from Quintessence: my Zoom link, and occasional admissions insights. You can unsubscribe anytime.</label>
     <button class="full" type="submit">Send</button>
   </form>
 </div></section>
@@ -465,7 +467,7 @@
 
 <footer><div class="wrap">
   <div><div class="fmark serif">Quintessence</div><div class="fdesc">Private College Counseling &amp; Application Advisory</div></div>
-  <div class="fmeta"><span class="qimono">QI</span><br>qiadmissions.com<br><a class="flang" href="/grace-zh" lang="zh" hreflang="zh-Hans">中文</a></div>
+  <div class="fmeta"><span class="qimono">QI</span><br><a class="furl" href="https://qiadmissions.com">qiadmissions.com</a><br><a class="flang" href="/grace-zh" lang="zh" hreflang="zh-Hans">中文</a></div>
 </div></footer>
 </div><!-- /#site -->
 
@@ -475,7 +477,7 @@
   <div class="mbar"><div class="mbar-in">
     <button class="mback" type="button" data-close><span class="chev">←</span><span class="navqi">QI</span><span class="navmark">Quintessence</span></button>
     <div class="mbar-actions">
-      <a class="mreserve" href="#rsvp" data-goto="#rsvp">Reserve</a>
+      <a class="mreserve" href="#seminar" data-goto="#seminar">Reserve</a>
       <button class="mclose" type="button" data-close aria-label="Close">×</button>
     </div>
   </div></div>
@@ -571,7 +573,7 @@
   </article>
 
   <div class="endcta">
-    <a class="btn" href="#rsvp" data-goto="#rsvp">Sign up for the complimentary seminar →</a>
+    <a class="btn" href="#seminar" data-goto="#seminar">Sign up for the complimentary seminar →</a>
     <a class="backlink" href="#" data-close>← Back to Quintessence</a>
   </div>
 </div>
@@ -595,9 +597,7 @@
 </div>
 
 <script>
-  /* auto-check the email-consent box once the visitor starts filling the form (they can still uncheck) */
-  (function(){ var f=document.querySelector('.rsvp form'); if(!f) return; var c=document.getElementById('consent'); var done=false;
-    f.addEventListener('input', function(){ if(!done && c){ c.checked=true; done=true; } }); })();
+  /* email-consent is a required opt-in — the visitor must actively check it to submit (no auto-tick) */
   /* duplicate the crest track once for a seamless loop */
   (function(){ var t=document.getElementById('crestTrack'); if(t){ t.innerHTML += t.innerHTML; } })();
   /* gentle, non-dizzying smooth scroll for visible in-page links (Reserve, seminar, contact) */

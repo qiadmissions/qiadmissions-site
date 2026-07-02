@@ -101,6 +101,7 @@
   .marquee .lead{ flex:0 0 auto; width:clamp(140px,16vw,240px); }
   .u{ white-space:nowrap; }
   .seminar .learn .it .txt{ flex:1 1 auto; min-width:0; }
+  .seminar .learn .it{ min-width:0; }
   .seminar .learn .it .txt .u{ display:block; }
   @keyframes scroll{ from{transform:translateX(0)} to{transform:translateX(-50%)} }
   @media(prefers-reduced-motion:reduce){ .marquee .track{ animation:none; flex-wrap:wrap; white-space:normal; justify-content:center } }
@@ -162,8 +163,10 @@
   .contact .mailto:hover{ border-color:var(--accent); }
   .contact .contactsub{ margin-top:22px; font-size:13px; letter-spacing:.08em; color:var(--soft); }
 
-  footer{ padding:48px 0 64px; border-bottom:none; }
-  footer .wrap{ display:flex; justify-content:space-between; align-items:flex-end; gap:24px; flex-wrap:wrap; }
+  footer{ padding:56px 0 64px; border-bottom:none; }
+  footer .wrap{ display:flex; justify-content:space-between; align-items:flex-start; gap:30px 48px; flex-wrap:wrap; }
+  .fmeta .furl{ color:var(--soft); text-decoration:none; letter-spacing:.02em; transition:color .2s ease; }
+  .fmeta .furl:hover{ color:var(--accent); }
   .fmark{ font-family:'Cormorant Garamond',serif; font-weight:600; font-size:24px; }
   .fdesc{ font-size:12.5px; letter-spacing:.06em; color:var(--soft); margin-top:8px; }
   .fmeta{ font-size:13px; color:var(--soft); line-height:1.9; text-align:right; }
@@ -202,7 +205,7 @@
     .marquee .sch{ font-size:21px; }
     .step{ grid-template-columns:1fr; gap:6px; }
     .step .lbl{ white-space:normal; }
-    form{ grid-template-columns:1fr; } .fmeta{ text-align:left; }
+    form{ grid-template-columns:1fr; } footer .wrap{ flex-direction:column; align-items:flex-start; gap:24px; } .fmeta{ text-align:left; }
   }
 
   /* ===== 方法 — seamless in-page reading panel ===== */
@@ -302,7 +305,7 @@
   <div class="navlinks" id="navlinks">
     <a class="navurl hide-sm" href="https://qiadmissions.com">qiadmissions.com</a>
     <a class="navcta" href="#method" data-method>方法</a>
-    <a class="navcta" href="#rsvp">预约名额</a>
+    <a class="navcta" href="#seminar">预约名额</a>
     <span class="langtoggle" role="group" aria-label="语言 Language"><a class="lang" href="/grace">EN</a><span class="langsep"></span><a class="lang zh active" aria-current="page">中文</a></span>
   </div>
 </div></nav>
@@ -350,24 +353,6 @@
   </div>
 </header>
 
-<!-- SEMINAR -->
-<section class="seminar" id="seminar"><div class="wrap">
-  <div class="col">
-  <div class="eyebrow">公益晚间讲座<br>面向家长与学生 · 9 至 12 年级，以及转学申请者</div>
-  <div class="title serif">大学真正想要什么<span class="sub">为出众申请者打造的策略体系</span></div>
-  <div class="covhead">讲座内容</div>
-  <div class="learn">
-    <div class="it"><b>01</b> 大学真正在寻找什么</div>
-    <div class="it"><b>02</b> 驱动录取的深层动因</div>
-    <div class="it"><b>03</b> 策略与真实的罕见统一</div>
-    <div class="it"><b>04</b> 让申请者脱颖而出的关键</div>
-    <div class="it"><b>05</b> <span class="txt"><span class="u">Quintessence 方法：</span><wbr><span class="u">QI 五阶体系与文书的艺术</span></span></div>
-  </div>
-  </div>
-  <div class="facts"><span class="fp">7月12日（周日）</span> <span class="d">·</span> <span class="fp">晚 8:00 美东时间</span> <span class="d">·</span> <span class="fp">Zoom 线上直播</span> <span class="d">·</span> <span class="fp">公益</span></div>
-  <div class="row"><a class="btn btn-light" href="#rsvp">预约名额 →</a></div>
-</div></section>
-
 <!-- OUR APPROACH -->
 <section class="method" id="method"><div class="wrap">
   <div class="eyebrow">我们的方法</div>
@@ -410,9 +395,27 @@
   </div>
 </div></div></section>
 
+<!-- SEMINAR -->
+<section class="seminar" id="seminar"><div class="wrap">
+  <div class="col">
+  <div class="eyebrow">公益晚间讲座<br>面向家长与学生 · 9 至 12 年级，以及转学申请者</div>
+  <div class="title serif">大学真正想要什么<span class="sub">为出众申请者打造的策略体系</span></div>
+  <div class="covhead">讲座内容</div>
+  <div class="learn">
+    <div class="it"><b>01</b> 大学真正在寻找什么</div>
+    <div class="it"><b>02</b> 驱动录取的深层动因</div>
+    <div class="it"><b>03</b> 策略与真实的罕见统一</div>
+    <div class="it"><b>04</b> 让申请者脱颖而出的关键</div>
+    <div class="it"><b>05</b> <span class="txt"><span class="u">Quintessence 方法：</span><wbr><span class="u">QI 五阶体系与文书的艺术</span></span></div>
+  </div>
+  </div>
+  <div class="facts"><span class="fp">7月12日（周日）</span> <span class="d">·</span> <span class="fp">晚 8:00 美东时间</span> <span class="d">·</span> <span class="fp">Zoom 线上直播</span> <span class="d">·</span> <span class="fp">公益</span></div>
+  <div class="row"><a class="btn btn-light" href="#rsvp">预约名额 →</a></div>
+</div></section>
+
 <!-- RSVP form — functional attrs identical to the EN site; only visible labels translated -->
 <section class="rsvp" id="rsvp"><div class="wrap">
-  <div class="eyebrow">预约名额</div>
+  <div class="eyebrow">预约领取 Zoom 链接</div>
   <div class="h2 serif">预留您的讲座席位。</div>
   <p class="lede">7月12日（周日）· 晚 8:00 美东时间 · Zoom 线上直播。请告诉我们将链接发送至何处。</p>
   <form action="https://api.web3forms.com/submit" method="POST">
@@ -449,7 +452,7 @@
     <div><label>首选语言</label><select name="language"><option>中文</option><option>English</option><option>无偏好</option></select></div>
     <div><label>您从何处得知我们？</label><select name="referral"><option value="">请选择…</option><option>朋友或家人</option><option>孩子的学校</option><option>现在或过去的客户</option><option>微信群</option><option>GRACE（罗斯林华协）</option><option>网络搜索</option><option>其他</option></select></div>
     <div class="full"><label>还有什么想让我们了解的吗？（选填）</label><input name="note"></div>
-    <label class="full" style="font-size:14px;color:var(--soft);letter-spacing:0;font-weight:400;display:block"><input type="checkbox" id="consent" name="email_consent" value="yes" style="width:auto;height:auto;margin-right:8px">是的 —— 我愿意接收来自 Quintessence 的邮件：我的 Zoom 链接，以及偶尔的升学洞见。您可随时取消订阅。</label>
+    <label class="full" style="font-size:14px;color:var(--soft);letter-spacing:0;font-weight:400;display:block"><input type="checkbox" id="consent" name="email_consent" value="yes" required style="width:auto;height:auto;margin-right:8px">是的 —— 我愿意接收来自 Quintessence 的邮件：我的 Zoom 链接，以及偶尔的升学洞见。您可随时取消订阅。</label>
     <button class="full" type="submit">提交</button>
   </form>
 </div></section>
@@ -464,7 +467,7 @@
 
 <footer><div class="wrap">
   <div><div class="fmark">Quintessence</div><div class="fdesc">私人大学升学与申请顾问</div></div>
-  <div class="fmeta"><span class="qimono">QI</span><br>qiadmissions.com</div>
+  <div class="fmeta"><span class="qimono">QI</span><br><a class="furl" href="https://qiadmissions.com">qiadmissions.com</a></div>
 </div></footer>
 </div><!-- /#site -->
 
@@ -474,7 +477,7 @@
   <div class="mbar"><div class="mbar-in">
     <button class="mback" type="button" data-close><span class="chev">←</span><span class="navqi">QI</span><span class="navmark">Quintessence</span></button>
     <div class="mbar-actions">
-      <a class="mreserve" href="#rsvp" data-goto="#rsvp">预约名额</a>
+      <a class="mreserve" href="#seminar" data-goto="#seminar">预约名额</a>
       <button class="mclose" type="button" data-close aria-label="关闭">×</button>
     </div>
   </div></div>
@@ -549,7 +552,7 @@
   </article>
 
   <div class="endcta">
-    <a class="btn" href="#rsvp" data-goto="#rsvp">报名参加公益讲座 →</a>
+    <a class="btn" href="#seminar" data-goto="#seminar">报名参加公益讲座 →</a>
     <a class="backlink" href="#" data-close>← 返回 Quintessence</a>
   </div>
 </div>
@@ -573,8 +576,7 @@
 </div>
 
 <script>
-  (function(){ var f=document.querySelector('.rsvp form'); if(!f) return; var c=document.getElementById('consent'); var done=false;
-    f.addEventListener('input', function(){ if(!done && c){ c.checked=true; done=true; } }); })();
+  /* email-consent is a required opt-in — the visitor must actively check it to submit (no auto-tick) */
   (function(){ var t=document.getElementById('crestTrack'); if(t){ t.innerHTML += t.innerHTML; } })();
   (function(){
     var reduce = matchMedia('(prefers-reduced-motion:reduce)').matches;

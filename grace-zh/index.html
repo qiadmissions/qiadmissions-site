@@ -106,7 +106,7 @@
   @keyframes scroll{ from{transform:translateX(0)} to{transform:translateX(-50%)} }
   @media(prefers-reduced-motion:reduce){ .marquee .track{ animation:none; flex-wrap:wrap; white-space:normal; justify-content:center } }
 
-  .seminar{ background:var(--navy); color:var(--cream); border-bottom:none; padding:74px 0; }
+  .seminar{ background:var(--navy); color:var(--cream); border-top:1px solid rgba(156,128,73,.3); border-bottom:none; padding:74px 0; }
   .seminar .eyebrow{ color:var(--gold-on); line-height:1.7; }
   .seminar .title{ font-family:var(--serif); font-weight:600; color:#fff; font-size:clamp(30px,4.4vw,50px); line-height:1.2; margin-top:18px; }
   .seminar .title .sub{ display:block; color:var(--cream-soft); font-size:clamp(21px,3vw,32px); margin-top:8px; font-weight:500; }
@@ -142,9 +142,16 @@
   .founder .team{ margin-top:34px; border-top:1px solid var(--line); padding-top:26px; }
   .founder .team h3{ font-family:var(--serif); font-weight:600; font-size:22px; }
   .founder .team p{ font-family:var(--body); font-weight:400; font-size:16.5px; color:var(--soft); line-height:1.85; margin-top:10px; }
+  /* founder — bio + portrait slot */
+  .founder-grid{ display:grid; grid-template-columns:minmax(0,1fr) clamp(210px,26vw,290px); gap:clamp(32px,5vw,66px); align-items:start; }
+  .founder-photo{ margin:0; }
+  .founder-photo .photoslot{ aspect-ratio:3/4; border:1px solid var(--line); background:var(--paper); display:flex; align-items:center; justify-content:center; text-align:center; color:var(--soft); font-family:var(--serif); font-size:15px; letter-spacing:.06em; line-height:1.6; }
+  .founder-photo img{ width:100%; aspect-ratio:3/4; object-fit:cover; display:block; border:1px solid var(--line); }
+  .founder-photo figcaption{ margin-top:12px; font-size:12px; letter-spacing:.1em; color:var(--soft); }
 
   .rsvp{ background:var(--paper); }
   .rsvp .lede{ font-family:var(--body); font-weight:400; font-size:17px; color:var(--soft); line-height:1.85; max-width:48ch; margin-top:16px; }
+  .rsvp-cta{ display:none; margin-top:34px; } .rsvp.is-cta{ min-height:auto; } .rsvp.is-cta .rsvp-cta{ display:block; }
   form{ display:grid; grid-template-columns:1fr 1fr; gap:18px; margin-top:38px; max-width:680px; }
   .full{ grid-column:1/-1; }
   label{ font-size:12.5px; letter-spacing:.04em; color:var(--soft); display:block; margin-bottom:8px; }
@@ -205,6 +212,7 @@
     .marquee .sch{ font-size:21px; }
     .step{ grid-template-columns:1fr; gap:6px; }
     .step .lbl{ white-space:normal; }
+    .founder-grid{ grid-template-columns:1fr; gap:26px; } .founder-photo{ max-width:300px; }
     form{ grid-template-columns:1fr; } footer .wrap{ flex-direction:column; align-items:flex-start; gap:24px; } .fmeta{ text-align:left; }
   }
 
@@ -305,7 +313,7 @@
   <div class="navlinks" id="navlinks">
     <a class="navurl hide-sm" href="https://qiadmissions.com">qiadmissions.com</a>
     <a class="navcta" href="#method" data-method>方法</a>
-    <a class="navcta" href="#seminar">预约名额</a>
+    <a class="navcta" href="#rsvp" data-register>预约名额</a>
     <span class="langtoggle" role="group" aria-label="语言 Language"><a class="lang" href="/grace">EN</a><span class="langsep"></span><a class="lang zh active" aria-current="page">中文</a></span>
   </div>
 </div></nav>
@@ -324,7 +332,7 @@
     </div>
     <p class="herosub">我们是一家专注的自有升学顾问团队，以策略性的方法应对申请 ——<b>让成果源于精心的设计。</b>我们帮助您的孩子成为最真实的自己，并赢得心仪大学的录取。</p>
     <div class="herocta">
-      <a class="btn btn-dark" href="#seminar">报名 —— 公益讲座 · 7月12日</a>
+      <a class="btn btn-dark" href="#seminar" data-register>报名 —— 公益讲座 · 7月12日</a>
       <a class="tlink" href="#method" data-method>了解我们的方法 →</a>
     </div>
     </div>
@@ -352,6 +360,24 @@
     </div>
   </div>
 </header>
+
+<!-- SEMINAR -->
+<section class="seminar" id="seminar"><div class="wrap">
+  <div class="col">
+  <div class="eyebrow">公益晚间讲座<br>面向家长与学生 · 9 至 12 年级，以及转学申请者</div>
+  <div class="title serif">大学真正想要什么<span class="sub">为出众申请者打造的策略体系</span></div>
+  <div class="covhead">讲座内容</div>
+  <div class="learn">
+    <div class="it"><b>01</b> 大学真正在寻找什么</div>
+    <div class="it"><b>02</b> 驱动录取的深层动因</div>
+    <div class="it"><b>03</b> 策略与真实的罕见统一</div>
+    <div class="it"><b>04</b> 让申请者脱颖而出的关键</div>
+    <div class="it"><b>05</b> <span class="txt"><span class="u">Quintessence 方法：</span><wbr><span class="u">QI 五阶体系与文书的艺术</span></span></div>
+  </div>
+  </div>
+  <div class="facts"><span class="fp">7月12日（周日）</span> <span class="d">·</span> <span class="fp">晚 8:00 美东时间</span> <span class="d">·</span> <span class="fp">Zoom 线上直播</span> <span class="d">·</span> <span class="fp">公益</span></div>
+  <div class="row"><a class="btn btn-light" href="#rsvp" data-register>预约名额 →</a></div>
+</div></section>
 
 <!-- OUR APPROACH -->
 <section class="method" id="method"><div class="wrap">
@@ -385,7 +411,7 @@
 </div></section>
 
 <!-- FOUNDER + TEAM -->
-<section class="founder" id="founder"><div class="wrap"><div class="col">
+<section class="founder" id="founder"><div class="wrap"><div class="founder-grid"><div class="col">
   <div class="eyebrow">总监兼创始人</div>
   <div class="h2 serif">Adam Obedian</div>
   <p class="body">十余年间，Adam 与一位又一位申请者并肩工作，打磨出了 Quintessence 方法与 QI 流程 —— 起初是在自己求学的尾声为同窗提供建议，随后在过去六年里全心投入 —— 引导每一位学生走向心仪的大学。他曾在哥伦比亚大学研习哲学与戏剧，精进写作、叙事与讲故事的功力：这正是一份出众申请的核心所在。</p>
@@ -393,31 +419,19 @@
     <h3 class="serif">我们的团队</h3>
     <p>当您选择 Quintessence，您所托付的是一家机构与一套体系，而非某一个人的时间。一支由写作者与策略师组成的专业团队，受过 QI 流程的训练、由 Adam 亲自指导，支撑着每一份申请，并恪守同一套严苛标准。您所托付的，是我们所构建的一切：流程、团队，以及它所带来的成果。</p>
   </div>
+  </div>
+  <figure class="founder-photo">
+    <img src="/assets/founder.png" alt="Adam Obedian" width="630" height="840">
+    <figcaption>Adam Obedian · 总监兼创始人</figcaption>
+  </figure>
 </div></div></section>
-
-<!-- SEMINAR -->
-<section class="seminar" id="seminar"><div class="wrap">
-  <div class="col">
-  <div class="eyebrow">公益晚间讲座<br>面向家长与学生 · 9 至 12 年级，以及转学申请者</div>
-  <div class="title serif">大学真正想要什么<span class="sub">为出众申请者打造的策略体系</span></div>
-  <div class="covhead">讲座内容</div>
-  <div class="learn">
-    <div class="it"><b>01</b> 大学真正在寻找什么</div>
-    <div class="it"><b>02</b> 驱动录取的深层动因</div>
-    <div class="it"><b>03</b> 策略与真实的罕见统一</div>
-    <div class="it"><b>04</b> 让申请者脱颖而出的关键</div>
-    <div class="it"><b>05</b> <span class="txt"><span class="u">Quintessence 方法：</span><wbr><span class="u">QI 五阶体系与文书的艺术</span></span></div>
-  </div>
-  </div>
-  <div class="facts"><span class="fp">7月12日（周日）</span> <span class="d">·</span> <span class="fp">晚 8:00 美东时间</span> <span class="d">·</span> <span class="fp">Zoom 线上直播</span> <span class="d">·</span> <span class="fp">公益</span></div>
-  <div class="row"><a class="btn btn-light" href="#rsvp">预约名额 →</a></div>
-</div></section>
 
 <!-- RSVP form — functional attrs identical to the EN site; only visible labels translated -->
 <section class="rsvp" id="rsvp"><div class="wrap">
   <div class="eyebrow">预约领取 Zoom 链接</div>
   <div class="h2 serif">预留您的讲座席位。</div>
   <p class="lede">7月12日（周日）· 晚 8:00 美东时间 · Zoom 线上直播。请告诉我们将链接发送至何处。</p>
+  <div class="rsvp-cta"><a class="btn btn-dark" href="#rsvp" data-register>预约名额 →</a></div>
   <form action="https://api.web3forms.com/submit" method="POST">
     <input type="hidden" name="access_key" value="74d99fe3-e078-4796-8c93-920b2c6b221d">
     <input type="hidden" name="subject" value="New Quintessence Seminar RSVP (ZH)">
@@ -477,7 +491,7 @@
   <div class="mbar"><div class="mbar-in">
     <button class="mback" type="button" data-close><span class="chev">←</span><span class="navqi">QI</span><span class="navmark">Quintessence</span></button>
     <div class="mbar-actions">
-      <a class="mreserve" href="#seminar" data-goto="#seminar">预约名额</a>
+      <a class="mreserve" href="#rsvp" data-register>预约名额</a>
       <button class="mclose" type="button" data-close aria-label="关闭">×</button>
     </div>
   </div></div>
@@ -552,7 +566,7 @@
   </article>
 
   <div class="endcta">
-    <a class="btn" href="#seminar" data-goto="#seminar">报名参加公益讲座 →</a>
+    <a class="btn" href="#rsvp" data-register>报名参加公益讲座 →</a>
     <a class="backlink" href="#" data-close>← 返回 Quintessence</a>
   </div>
 </div>
@@ -578,6 +592,8 @@
 <script>
   /* email-consent is a required opt-in — the visitor must actively check it to submit (no auto-tick) */
   (function(){ var t=document.getElementById('crestTrack'); if(t){ t.innerHTML += t.innerHTML; } })();
+  /* progressive enhancement: house the single RSVP form inside the Register panel (context always, no fly-past) */
+  (function(){ var rs=document.querySelector('.rsvp'); var form=rs&&rs.querySelector('form'); var slot=document.querySelector('#registerOverlay .formslot'); if(rs&&form&&slot){ slot.innerHTML=''; slot.appendChild(form); rs.classList.add('is-cta'); } })();
   (function(){
     var reduce = matchMedia('(prefers-reduced-motion:reduce)').matches;
     function ease(t){ return t<.5 ? 4*t*t*t : 1-Math.pow(-2*t+2,3)/2; }
@@ -596,6 +612,7 @@
     function openMethod(){ if(isOpen) return; isOpen=true; overlay.removeEventListener('transitionend',onClosedEnd); overlay.style.display='block'; overlay.scrollTop=0; document.body.style.overflow='hidden'; requestAnimationFrame(function(){ requestAnimationFrame(function(){ root.classList.add('method-open'); }); }); try{ history.pushState({qm:1},''); }catch(e){} try{ overlay.focus({preventScroll:true}); }catch(e){} }
     function closeMethod(fromPop){ if(!isOpen) return; isOpen=false; root.classList.remove('method-open'); document.body.style.overflow=''; overlay.addEventListener('transitionend',onClosedEnd); setTimeout(hideNow,640); if(!fromPop && history.state && history.state.qm){ try{ history.back(); }catch(e){} } }
     function goTo(sel){ var el=document.querySelector(sel); closeMethod(); if(el){ requestAnimationFrame(function(){ requestAnimationFrame(function(){ var navH=document.querySelector('nav').getBoundingClientRect().height; window.scrollTo(0, el.getBoundingClientRect().top + window.pageYOffset - navH); }); }); } }
+    window.__closeMethodQuiet=function(){ if(isOpen){ isOpen=false; root.classList.remove('method-open'); document.body.style.overflow=''; overlay.addEventListener('transitionend',onClosedEnd); setTimeout(hideNow,700); } };
     document.querySelectorAll('[data-method]').forEach(function(a){ a.addEventListener('click',function(e){ e.preventDefault(); openMethod(); }); });
     overlay.querySelectorAll('[data-close]').forEach(function(a){ a.addEventListener('click',function(e){ e.preventDefault(); closeMethod(); }); });
     overlay.querySelectorAll('[data-goto]').forEach(function(a){ a.addEventListener('click',function(e){ e.preventDefault(); goTo(a.getAttribute('data-goto')); }); });
@@ -608,7 +625,7 @@
     var root=document.documentElement, open=false;
     function hide(){ if(!open){ ov.style.display='none'; } }
     function onEnd(e){ if(e.target!==ov||e.propertyName!=='transform') return; ov.removeEventListener('transitionend',onEnd); hide(); }
-    function openReg(){ if(open) return; open=true; ov.removeEventListener('transitionend',onEnd); ov.style.display='block'; ov.scrollTop=0; document.body.style.overflow='hidden'; requestAnimationFrame(function(){ requestAnimationFrame(function(){ root.classList.add('register-open'); }); }); try{ history.pushState({qr:1},''); }catch(e){} try{ ov.focus({preventScroll:true}); }catch(e){} }
+    function openReg(){ if(open) return; if(document.documentElement.classList.contains('method-open') && window.__closeMethodQuiet){ window.__closeMethodQuiet(); } open=true; ov.removeEventListener('transitionend',onEnd); ov.style.display='block'; ov.scrollTop=0; document.body.style.overflow='hidden'; requestAnimationFrame(function(){ requestAnimationFrame(function(){ root.classList.add('register-open'); }); }); try{ history.pushState({qr:1},''); }catch(e){} try{ ov.focus({preventScroll:true}); }catch(e){} }
     function closeReg(fromPop){ if(!open) return; open=false; root.classList.remove('register-open'); document.body.style.overflow=''; ov.addEventListener('transitionend',onEnd); setTimeout(hide,640); if(!fromPop && history.state && history.state.qr){ try{ history.back(); }catch(e){} } }
     document.querySelectorAll('[data-register]').forEach(function(a){ a.addEventListener('click',function(e){ e.preventDefault(); openReg(); }); });
     ov.querySelectorAll('[data-rclose]').forEach(function(a){ a.addEventListener('click',function(e){ e.preventDefault(); closeReg(); }); });

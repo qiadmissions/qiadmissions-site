@@ -77,13 +77,13 @@
   .heroinner{ border-left:2px solid var(--navy); padding-left:clamp(22px,3.4vw,44px); }
   .brandcn{ font-family:'Noto Serif SC','PingFang SC',serif; font-weight:600; font-size:clamp(58px,9.6vw,116px); line-height:1; letter-spacing:.12em; color:var(--ink); margin-top:12px; }
   .brandhero{ font-family:'Cormorant Garamond',serif; font-weight:600; font-size:clamp(27px,4.2vw,46px); line-height:1; letter-spacing:.1em; color:var(--ink); margin-top:8px; }
-  .defn{ font-family:var(--body); font-size:clamp(16px,2vw,21px); color:var(--soft); line-height:1.7; margin-top:18px; max-width:52ch; }
+  .defn{ font-family:var(--body); font-size:clamp(16px,2vw,21px); color:var(--soft); line-height:1.7; margin-top:18px; max-width:38em; text-wrap:balance; }
   .defn b{ color:var(--ink); font-weight:600; }
   .defn .en{ font-family:'Cormorant Garamond',serif; font-style:italic; }
-  .namegloss{ margin-top:16px; border-left:2px solid var(--gold); padding-left:16px; max-width:52ch; }
-  .namegloss .cn{ font-family:'Noto Serif SC','PingFang SC',serif; font-weight:500; font-size:15px; letter-spacing:.02em; color:var(--ink); line-height:1.75; }
-  .namegloss .en{ font-family:'EB Garamond',Georgia,serif; font-style:italic; font-size:13.5px; color:var(--soft); line-height:1.55; margin-top:6px; }
-  .herosub{ font-family:var(--body); font-weight:400; font-size:17.5px; color:var(--ink); line-height:1.9; max-width:46ch; margin:24px 0 0; }
+  .namegloss{ margin-top:16px; border-left:2px solid var(--gold); padding-left:16px; max-width:40em; }
+  .namegloss .cn{ font-family:'Noto Serif SC','PingFang SC',serif; font-weight:500; font-size:15px; letter-spacing:.02em; color:var(--ink); line-height:1.75; text-wrap:balance; }
+  .namegloss .en{ font-family:'EB Garamond',Georgia,serif; font-style:italic; font-size:13.5px; color:var(--soft); line-height:1.55; margin-top:6px; text-wrap:balance; }
+  .herosub{ font-family:var(--body); font-weight:400; font-size:17.5px; color:var(--ink); line-height:1.9; max-width:34em; margin:24px 0 0; text-wrap:balance; }
   .herosub b{ color:var(--accent); font-weight:600; }
   .herocta{ margin-top:36px; display:flex; gap:22px; align-items:center; justify-content:flex-start; flex-wrap:wrap; }
   .heroproof{ background:var(--ink); border-top:none; padding:24px 0 26px; text-align:left; }
@@ -139,14 +139,27 @@
   .differ{ margin-top:28px; display:flex; flex-wrap:wrap; gap:12px 26px; }
   .differ span{ font-size:14.5px; color:var(--soft); } .differ b{ color:var(--ink); font-weight:600; }
 
+  .founder{ min-height:auto; padding:clamp(96px,13vh,132px) 0; }
   .founder .team{ margin-top:34px; border-top:1px solid var(--line); padding-top:26px; }
   .founder .team h3{ font-family:var(--serif); font-weight:600; font-size:22px; }
   .founder .team p{ font-family:var(--body); font-weight:400; font-size:16.5px; color:var(--soft); line-height:1.85; margin-top:10px; }
   /* founder — bio + portrait slot */
-  .founder-grid{ display:grid; grid-template-columns:minmax(0,1fr) clamp(210px,26vw,290px); gap:clamp(32px,5vw,66px); align-items:start; }
-  .founder-photo{ margin:0; }
+  .founder-grid{ display:grid; grid-template-columns:minmax(0,1fr) 124px; gap:clamp(26px,4vw,46px); align-items:start; }
+  .founder-photo{ margin:0; text-align:center; }
+  .founder-photo figcaption{ display:none; }
   .founder-photo .photoslot{ aspect-ratio:3/4; border:1px solid var(--line); background:var(--paper); display:flex; align-items:center; justify-content:center; text-align:center; color:var(--soft); font-family:var(--serif); font-size:15px; letter-spacing:.06em; line-height:1.6; }
-  .founder-photo img{ width:100%; aspect-ratio:3/4; object-fit:cover; display:block; border:1px solid var(--line); }
+  .founder-photo{ margin:0; }
+  .founder-head{ display:flex; align-items:center; gap:24px; margin-bottom:10px; }
+  .founder-head .founder-photo{ flex:0 0 auto; }
+  .founder-head .founder-id{ min-width:0; }
+  .founder-head .founder-id .h2{ margin-top:5px; }
+  .founder-body{ display:grid; grid-template-columns:1fr 1fr; gap:clamp(40px,6vw,78px); align-items:start; margin-top:30px; padding-top:30px; border-top:1px solid var(--line); }
+  .founder-body .body{ margin-top:0; }
+  .founder-body .team{ margin-top:0; border-top:none; padding-top:0; }
+  .founder-photo .portrait{ position:relative; width:104px; height:104px; border-radius:50%; overflow:hidden; border:1px solid var(--gold); background:#ece4d4; }
+  .founder-photo .portrait::after{ content:""; position:absolute; inset:6px; border:1px solid rgba(169,138,85,.6); border-radius:50%; pointer-events:none; z-index:3; }
+  .founder-photo .pimg{ position:absolute; inset:8px; width:calc(100% - 16px); height:calc(100% - 16px); border-radius:50%; object-fit:cover; object-position:center 32%; z-index:2; }
+  .founder-photo .pmono{ position:absolute; inset:0; z-index:1; display:flex; align-items:center; justify-content:center; font-family:var(--serif); font-weight:600; font-size:34px; letter-spacing:.04em; color:var(--accent); }
   .founder-photo figcaption{ margin-top:12px; font-size:12px; letter-spacing:.1em; color:var(--soft); }
 
   .rsvp{ background:var(--paper); }
@@ -212,7 +225,7 @@
     .marquee .sch{ font-size:21px; }
     .step{ grid-template-columns:1fr; gap:6px; }
     .step .lbl{ white-space:normal; }
-    .founder-grid{ grid-template-columns:1fr; gap:26px; } .founder-photo{ max-width:300px; }
+    .founder-body{ grid-template-columns:1fr; gap:26px; } .founder-head{ gap:18px; }
     form{ grid-template-columns:1fr; } footer .wrap{ flex-direction:column; align-items:flex-start; gap:24px; } .fmeta{ text-align:left; }
   }
 
@@ -302,7 +315,7 @@
   @media(prefers-reduced-motion:reduce){ #registerOverlay{ transition:none !important; } }
   @media(max-width:760px){ .register-open #site{ transform:none; } #registerOverlay .rbar-in{ padding:0 20px; min-height:54px; } #registerOverlay .rwrap{ padding:34px 22px 72px; } }
 </style>
-<style id="qi-hide-founder-photo">/* TEMP 2026-07-03: photo being adjusted in Claude Design — hide until the new one is ready */ .founder-photo{display:none!important} .founder-grid{grid-template-columns:minmax(0,1fr)!important}</style></head>
+</head>
 <body>
 
 <div id="site">
@@ -411,19 +424,20 @@
 </div></section>
 
 <!-- FOUNDER + TEAM -->
-<section class="founder" id="founder"><div class="wrap"><div class="founder-grid"><div class="col">
-  <div class="eyebrow">总监兼创始人</div>
-  <div class="h2 serif">Adam Obedian</div>
+<section class="founder" id="founder"><div class="wrap">
+  <div class="founder-head">
+    <figure class="founder-photo"><div class="portrait"><span class="pmono">AO</span><img class="pimg" src="/assets/founder.png" alt="Adam Obedian" onerror="this.style.display='none'"></div></figure>
+    <div class="founder-id">
+      <div class="eyebrow">总监兼创始人</div>
+      <div class="h2 serif">Adam Obedian</div>
+    </div>
+  </div>
+  <div class="founder-body">
   <p class="body">十余年间，Adam 与一位又一位申请者并肩工作，打磨出了 Quintessence 方法与 QI 流程 —— 起初是在自己求学的尾声为同窗提供建议，随后在过去六年里全心投入 —— 引导每一位学生走向心仪的大学。他曾在哥伦比亚大学研习哲学与戏剧，精进写作、叙事与讲故事的功力：这正是一份出众申请的核心所在。</p>
   <div class="team">
     <h3 class="serif">我们的团队</h3>
     <p>当您选择 Quintessence，您所托付的是一家机构与一套体系，而非某一个人的时间。一支由写作者与策略师组成的专业团队，受过 QI 流程的训练、由 Adam 亲自指导，支撑着每一份申请，并恪守同一套严苛标准。您所托付的，是我们所构建的一切：流程、团队，以及它所带来的成果。</p>
   </div>
-  </div>
-  <figure class="founder-photo">
-    <img src="/assets/founder.png" alt="Adam Obedian" width="630" height="840">
-    <figcaption>Adam Obedian · 总监兼创始人</figcaption>
-  </figure>
 </div></div></section>
 
 <!-- RSVP form — functional attrs identical to the EN site; only visible labels translated -->

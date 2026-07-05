@@ -138,14 +138,27 @@
   .differ{ margin-top:28px; display:flex; flex-wrap:wrap; gap:10px 26px; }
   .differ span{ font-size:14px; color:var(--soft); } .differ b{ color:var(--ink); font-weight:600; }
 
+  .founder{ min-height:auto; padding:clamp(96px,13vh,132px) 0; }
   .founder .team{ margin-top:34px; border-top:1px solid var(--line); padding-top:26px; }
   .founder .team h3{ font-family:var(--serif); font-weight:600; font-size:22px; }
   .founder .team p{ font-family:var(--body); font-weight:400; font-size:17px; color:var(--soft); line-height:1.58; margin-top:10px; }
   /* founder — bio + portrait slot */
-  .founder-grid{ display:grid; grid-template-columns:minmax(0,1fr) clamp(210px,26vw,290px); gap:clamp(32px,5vw,66px); align-items:start; }
-  .founder-photo{ margin:0; }
+  .founder-grid{ display:grid; grid-template-columns:minmax(0,1fr) 124px; gap:clamp(26px,4vw,46px); align-items:start; }
+  .founder-photo{ margin:0; text-align:center; }
+  .founder-photo figcaption{ display:none; }
   .founder-photo .photoslot{ aspect-ratio:3/4; border:1px solid var(--line); background:var(--paper); display:flex; align-items:center; justify-content:center; text-align:center; color:var(--soft); font-family:var(--serif); font-style:italic; font-size:14.5px; letter-spacing:.03em; line-height:1.5; }
-  .founder-photo img{ width:100%; aspect-ratio:3/4; object-fit:cover; display:block; border:1px solid var(--line); }
+  .founder-photo{ margin:0; }
+  .founder-head{ display:flex; align-items:center; gap:24px; margin-bottom:10px; }
+  .founder-head .founder-photo{ flex:0 0 auto; }
+  .founder-head .founder-id{ min-width:0; }
+  .founder-head .founder-id .h2{ margin-top:5px; }
+  .founder-body{ display:grid; grid-template-columns:1fr 1fr; gap:clamp(40px,6vw,78px); align-items:start; margin-top:30px; padding-top:30px; border-top:1px solid var(--line); }
+  .founder-body .body{ margin-top:0; }
+  .founder-body .team{ margin-top:0; border-top:none; padding-top:0; }
+  .founder-photo .portrait{ position:relative; width:104px; height:104px; border-radius:50%; overflow:hidden; border:1px solid var(--gold); background:#ece4d4; }
+  .founder-photo .portrait::after{ content:""; position:absolute; inset:6px; border:1px solid rgba(169,138,85,.6); border-radius:50%; pointer-events:none; z-index:3; }
+  .founder-photo .pimg{ position:absolute; inset:8px; width:calc(100% - 16px); height:calc(100% - 16px); border-radius:50%; object-fit:cover; object-position:center 32%; z-index:2; }
+  .founder-photo .pmono{ position:absolute; inset:0; z-index:1; display:flex; align-items:center; justify-content:center; font-family:var(--serif); font-weight:600; font-size:34px; letter-spacing:.04em; color:var(--accent); }
   .founder-photo figcaption{ margin-top:12px; font-size:11px; letter-spacing:.18em; text-transform:uppercase; color:var(--soft); }
 
   .rsvp{ background:var(--paper); }
@@ -213,7 +226,7 @@
     .marquee .sch{ font-size:22px; }
     .step{ grid-template-columns:1fr; gap:6px; }
     .step .lbl{ white-space:normal; }
-    .founder-grid{ grid-template-columns:1fr; gap:26px; } .founder-photo{ max-width:300px; }
+    .founder-body{ grid-template-columns:1fr; gap:26px; } .founder-head{ gap:18px; }
     form{ grid-template-columns:1fr; } footer .wrap{ flex-direction:column; align-items:flex-start; gap:24px; } .fmeta{ text-align:left; }
   }
 
@@ -304,7 +317,7 @@
   @media(prefers-reduced-motion:reduce){ #registerOverlay{ transition:none !important; } }
   @media(max-width:760px){ .register-open #site{ transform:none; } #registerOverlay .rbar-in{ padding:0 20px; min-height:54px; } #registerOverlay .rwrap{ padding:34px 22px 72px; } }
 </style>
-<style id="qi-hide-founder-photo">/* TEMP 2026-07-03: photo being adjusted in Claude Design — hide until the new one is ready */ .founder-photo{display:none!important} .founder-grid{grid-template-columns:minmax(0,1fr)!important}</style></head>
+</head>
 <body>
 
 <div id="site">
@@ -411,9 +424,15 @@
 </div></section>
 
 <!-- FOUNDER + TEAM (concise; full bios → About page) -->
-<section class="founder" id="founder"><div class="wrap"><div class="founder-grid"><div class="col">
-  <div class="eyebrow">Director &amp; Founder</div>
-  <div class="h2 serif">Adam Obedian</div>
+<section class="founder" id="founder"><div class="wrap">
+  <div class="founder-head">
+    <figure class="founder-photo"><div class="portrait"><span class="pmono">AO</span><img class="pimg" src="/assets/founder.png" alt="Adam Obedian" onerror="this.style.display='none'"></div></figure>
+    <div class="founder-id">
+      <div class="eyebrow">Director &amp; Founder</div>
+      <div class="h2 serif">Adam Obedian</div>
+    </div>
+  </div>
+  <div class="founder-body">
   <p class="body">Adam designed the Quintessence approach and the QI Process over more than a decade of working with
      applicant after applicant — first advising peers at the end of his own school years, then intensively over the
      past six — guiding each toward their top-choice school. He studied Philosophy and Drama at Columbia to master the
@@ -425,11 +444,6 @@
        to a single exacting standard. You are engaging the whole of what we have built: the process, the team, and
        the results it produces.</p>
   </div>
-  </div>
-  <figure class="founder-photo">
-    <img src="/assets/founder.png" alt="Adam Obedian" width="630" height="840">
-    <figcaption>Adam Obedian · Founder &amp; Director</figcaption>
-  </figure>
 </div></div></section>
 
 <!-- RSVP form -->
